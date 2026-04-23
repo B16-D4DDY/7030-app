@@ -216,6 +216,89 @@
     .cta { padding: 80px 24px; }
     footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 24px; }
   }
+ 
+ /* REDES SOCIAIS */
+  .social-section {
+    padding: 60px 48px 80px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .social-inner { max-width: 600px; margin: 0 auto; }
+  .social-section .section-label {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+    display: block;
+  }
+  .social-desc {
+    color: rgba(255,255,255,0.4); font-size: 0.9rem;
+    font-weight: 300; margin-bottom: 32px;
+  }
+  .social-links {
+    display: flex; align-items: center; justify-content: center;
+    gap: 16px; flex-wrap: wrap;
+  }
+  .social-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 13px 26px; border-radius: 100px;
+    text-decoration: none; font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 0.9rem;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.85);
+    transition: transform 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  }
+  .social-btn:hover { transform: translateY(-3px); }
+
+  .social-btn.instagram:hover {
+    background: rgba(225,48,108,0.15);
+    border-color: rgba(225,48,108,0.4);
+    box-shadow: 0 8px 24px rgba(225,48,108,0.2);
+    color: #f87195;
+  }
+  .social-btn.tiktok:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.3);
+    box-shadow: 0 8px 24px rgba(255,255,255,0.1);
+    color: #ffffff;
+  }
+  .social-btn.youtube:hover {
+    background: rgba(255,0,0,0.12);
+    border-color: rgba(255,0,0,0.35);
+    box-shadow: 0 8px 24px rgba(255,0,0,0.18);
+    color: #ff6b6b;
+  }
+
+  footer { border-top: 1px solid rgba(255,255,255,0.07); padding: 36px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; }
+  .footer-logo span { color: var(--gold); }
+  .footer-note, .footer-badge { color: rgba(255,255,255,0.28); font-size: 0.78rem; }
+
+  @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes floatIn { from { opacity:0; transform:translateY(40px) scale(0.95); } to { opacity:1; transform:none; } }
+  @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-12px); } }
+  .reveal { opacity:0; transform:translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity:1; transform:none; }
+
+  @media (max-width: 960px) {
+    nav { padding: 18px 24px; }
+    .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; gap: 48px; }
+    .hero-visual { order: -1; }
+    .phone-frame { width: 220px; }
+    .pf1 { right: -20px; } .pf2 { left: -10px; }
+    .how, .darkmode, .features { padding: 60px 24px; }
+    .how-grid { grid-template-columns: 1fr; }
+    .screens { padding: 60px 24px; }
+    .screens-grid { grid-template-columns: repeat(2,1fr); }
+    .darkmode-grid { grid-template-columns: 1fr; }
+    .cats { padding: 60px 24px; }
+    .cats-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; }
+    .cta { padding: 80px 24px; }
+    .social-section { padding: 48px 24px 60px; }
+    .social-links { gap: 12px; }
+    .social-btn { padding: 11px 20px; font-size: 0.85rem; }
+    footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 24px; }
+  }
 </style>
 </head>
 <body>
