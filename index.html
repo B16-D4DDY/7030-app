@@ -24,6 +24,7 @@
   .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; }
   .nav-logo span { color: var(--gold); }
   .nav-cta {
+    display: inline-flex; align-items: center; gap: 8px;
     background: var(--gold); color: var(--navy); font-family: 'Syne', sans-serif;
     font-weight: 700; padding: 10px 22px; border-radius: 100px;
     text-decoration: none; font-size: 0.875rem; transition: transform 0.2s, box-shadow 0.2s;
@@ -38,8 +39,8 @@
   }
   .hero-eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.3);
-    color: var(--gold); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em;
+    background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3);
+    color: var(--green); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em;
     text-transform: uppercase; padding: 6px 14px; border-radius: 100px;
     margin-bottom: 22px; animation: fadeUp 0.6s ease both;
   }
@@ -62,15 +63,28 @@
     display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
     animation: fadeUp 0.6s 0.3s ease both;
   }
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 8px;
+  .btn-appstore {
+    display: inline-flex; align-items: center; gap: 10px;
     background: var(--gold); color: var(--navy); font-family: 'Syne', sans-serif;
     font-weight: 700; padding: 15px 30px; border-radius: 100px;
     text-decoration: none; font-size: 0.95rem; transition: transform 0.2s, box-shadow 0.2s;
   }
-  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(245,158,11,0.45); }
+  .btn-appstore:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(245,158,11,0.45); }
   .btn-ghost { color: rgba(255,255,255,0.5); font-size: 0.9rem; text-decoration: none; transition: color 0.2s; }
   .btn-ghost:hover { color: white; }
+
+  /* Badge App Store */
+  .appstore-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px; padding: 10px 18px; text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .appstore-badge:hover { transform: translateY(-2px); background: rgba(255,255,255,0.1); }
+  .appstore-badge-icon { font-size: 1.6rem; line-height: 1; }
+  .appstore-badge-text { display: flex; flex-direction: column; }
+  .appstore-badge-sub { font-size: 0.65rem; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; text-transform: uppercase; }
+  .appstore-badge-main { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; color: white; }
 
   .split-bar { margin-top: 44px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.08); animation: fadeUp 0.6s 0.4s ease both; }
   .split-label { font-size: 0.72rem; color: var(--gray); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
@@ -130,14 +144,9 @@
   .darkmode { padding: 100px 48px; max-width: 1200px; margin: 0 auto; }
   .darkmode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 56px; }
   .darkmode-phones { display: flex; gap: 16px; justify-content: center; align-items: flex-end; }
-  .darkmode-phone-wrap { }
   .darkmode-phone-wrap.main { transform: scale(1.05); z-index: 2; }
   .darkmode-phone-frame { background: #0A0A0F; border-radius: 36px; padding: 10px; box-shadow: 0 0 0 1px rgba(255,255,255,0.15), 0 24px 60px rgba(0,0,0,0.7), 0 0 60px rgba(59,130,246,0.1); }
   .darkmode-phone-frame img { width: 100%; border-radius: 27px; display: block; }
-  .dm-main { width: 160px; }
-  .dm-secondary { width: 130px; opacity: 0.75; }
-  .darkmode-text .section-label { margin-bottom: 14px; }
-  .darkmode-text h2 { margin-bottom: 16px; }
   .darkmode-text p { color: rgba(255,255,255,0.5); font-size: 1rem; line-height: 1.7; font-weight: 300; margin-bottom: 24px; }
   .dark-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 100px; padding: 8px 16px; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
 
@@ -181,17 +190,44 @@
 
   /* CTA */
   .cta { padding: 120px 48px; text-align: center; max-width: 700px; margin: 0 auto; }
-  .cta-pill { display: inline-block; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.25); color: var(--gold); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 24px; }
+  .cta-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25);
+    color: var(--green); font-size: 0.72rem; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 24px;
+  }
   .cta h2 { font-size: clamp(2.2rem, 4vw, 4rem); margin-bottom: 20px; }
   .cta-desc { color: rgba(255,255,255,0.5); font-size: 1rem; line-height: 1.7; font-weight: 300; margin-bottom: 44px; }
-  .btn-whatsapp { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: white; font-family: 'Syne', sans-serif; font-weight: 700; padding: 16px 36px; border-radius: 100px; text-decoration: none; font-size: 1rem; margin-bottom: 16px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 8px 32px rgba(37,211,102,0.3); }
-  .btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(37,211,102,0.45); }
+  .btn-cta-appstore {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--gold); color: var(--navy); font-family: 'Syne', sans-serif;
+    font-weight: 700; padding: 18px 40px; border-radius: 100px;
+    text-decoration: none; font-size: 1.05rem; margin-bottom: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 8px 32px rgba(245,158,11,0.35);
+  }
+  .btn-cta-appstore:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(245,158,11,0.5); }
   .cta-note { color: rgba(255,255,255,0.28); font-size: 0.78rem; }
+
+  /* REDES SOCIAIS */
+  .social-section { padding: 60px 48px 80px; text-align: center; border-top: 1px solid rgba(255,255,255,0.06); }
+  .social-inner { max-width: 600px; margin: 0 auto; }
+  .social-section .section-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: block; }
+  .social-desc { color: rgba(255,255,255,0.4); font-size: 0.9rem; font-weight: 300; margin-bottom: 32px; }
+  .social-links { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .social-btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 26px; border-radius: 100px; text-decoration: none; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.85); transition: transform 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s; }
+  .social-btn:hover { transform: translateY(-3px); }
+  .social-btn.instagram:hover { background: rgba(225,48,108,0.15); border-color: rgba(225,48,108,0.4); box-shadow: 0 8px 24px rgba(225,48,108,0.2); color: #f87195; }
+  .social-btn.tiktok:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); box-shadow: 0 8px 24px rgba(255,255,255,0.1); color: #ffffff; }
+  .social-btn.youtube:hover { background: rgba(255,0,0,0.12); border-color: rgba(255,0,0,0.35); box-shadow: 0 8px 24px rgba(255,0,0,0.18); color: #ff6b6b; }
 
   footer { border-top: 1px solid rgba(255,255,255,0.07); padding: 36px 48px; display: flex; justify-content: space-between; align-items: center; }
   .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; }
   .footer-logo span { color: var(--gold); }
-  .footer-note, .footer-badge { color: rgba(255,255,255,0.28); font-size: 0.78rem; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { color: rgba(255,255,255,0.35); font-size: 0.78rem; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: rgba(255,255,255,0.7); }
+  .footer-note { color: rgba(255,255,255,0.28); font-size: 0.78rem; }
 
   @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
   @keyframes floatIn { from { opacity:0; transform:translateY(40px) scale(0.95); } to { opacity:1; transform:none; } }
@@ -214,7 +250,11 @@
     .cats-grid { grid-template-columns: 1fr; }
     .features-grid { grid-template-columns: 1fr; }
     .cta { padding: 80px 24px; }
-    footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 24px; }
+    .social-section { padding: 48px 24px 60px; }
+    .social-links { gap: 12px; }
+    .social-btn { padding: 11px 20px; font-size: 0.85rem; }
+    footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px 24px; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
   }
 </style>
 </head>
@@ -222,14 +262,16 @@
 
 <nav>
   <div class="nav-logo">70<span>/</span>30</div>
-  <a href="#contato" class="nav-cta">Quero testar</a>
+  <a href="https://apps.apple.com/us/app/70-30app-controle-financeiro/id6769233183" target="_blank" class="nav-cta">
+    ⬇︎ Baixar grátis
+  </a>
 </nav>
 
 <!-- HERO -->
 <section>
   <div class="hero">
     <div>
-      <div class="hero-eyebrow">📱 App iOS · Controle financeiro</div>
+      <div class="hero-eyebrow">✅ Disponível na App Store · iOS</div>
       <h1>70<span>/</span>30<br><span class="rule">A regra que muda<br>sua vida financeira.</span></h1>
       <p class="hero-desc">
         Uma regra simples. Quatro categorias. Zero complicação.
@@ -237,7 +279,9 @@
         e o app faz todo o trabalho por você.
       </p>
       <div class="hero-actions">
-        <a href="#contato" class="btn-primary">Quero ser avisado no lançamento →</a>
+        <a href="https://apps.apple.com/us/app/70-30app-controle-financeiro/id6769233183" target="_blank" class="btn-appstore">
+          🍎 Baixar grátis na App Store
+        </a>
         <a href="#como-funciona" class="btn-ghost">Como funciona ↓</a>
       </div>
       <div class="split-bar">
@@ -332,17 +376,17 @@
     <div class="darkmode-phones">
       <div class="darkmode-phone-wrap">
         <div class="darkmode-phone-frame">
-          <img src="imagens/gastos-dark.png" alt="Gastos dark" class="dm-secondary" style="width:130px;border-radius:18px;display:block;">
+          <img src="imagens/gastos-dark.png" alt="Gastos dark" style="width:130px;border-radius:18px;display:block;">
         </div>
       </div>
       <div class="darkmode-phone-wrap main">
         <div class="darkmode-phone-frame">
-          <img src="imagens/resumo-dark.png" alt="Dashboard dark" class="dm-main" style="width:160px;border-radius:22px;display:block;">
+          <img src="imagens/resumo-dark.png" alt="Dashboard dark" style="width:160px;border-radius:22px;display:block;">
         </div>
       </div>
       <div class="darkmode-phone-wrap">
         <div class="darkmode-phone-frame">
-          <img src="imagens/cartoes-dark.png" alt="Cartões dark" class="dm-secondary" style="width:130px;border-radius:18px;display:block;">
+          <img src="imagens/cartoes-dark.png" alt="Cartões dark" style="width:130px;border-radius:18px;display:block;">
         </div>
       </div>
     </div>
@@ -415,22 +459,43 @@
 <!-- CTA -->
 <section class="cta" id="contato">
   <div class="reveal">
-    <div class="cta-pill">✦ Em breve na App Store</div>
+    <div class="cta-pill">✅ Disponível agora na App Store</div>
     <h2>Pronto para mudar a sua vida financeira?</h2>
-    <p class="cta-desc">Mande uma mensagem e seja um dos primeiros a testar quando o app estiver disponível.</p>
-    <a href="https://wa.me/5511963266344?text=Ol%C3%A1!%20Gostaria%20de%20ser%20avisado%20no%20lan%C3%A7amento%20do%20app%2070%2F30%20%F0%9F%9A%80"
-       target="_blank" class="btn-whatsapp">
-      <span>💬</span> Quero ser avisado no lançamento
-    </a><br>
-    <div class="cta-note">Você será contatado pelo WhatsApp quando o app estiver disponível.</div>
+    <p class="cta-desc">Baixe grátis e comece em menos de 2 minutos. Sem cadastro, sem conta, sem complicação.</p>
+    <a href="https://apps.apple.com/us/app/70-30app-controle-financeiro/id6769233183" target="_blank" class="btn-cta-appstore">
+      🍎 Baixar grátis na App Store
+    </a><br><br>
+    <div class="cta-note">Disponível para iPhone · iOS 17 ou superior · Grátis com compras opcionais</div>
+  </div>
+</section>
+
+<!-- REDES SOCIAIS -->
+<section class="social-section">
+  <div class="social-inner reveal">
+    <span class="section-label">Siga a gente</span>
+    <p class="social-desc">Atualizações do app e dicas do método 70/30.</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/aplicativo7030" target="_blank" rel="noopener" class="social-btn instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        <span>Instagram</span>
+      </a>
+      <a href="https://www.tiktok.com/@7030.app" target="_blank" rel="noopener" class="social-btn tiktok">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.31 6.31 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+        <span>TikTok</span>
+      </a>
+      <a href="https://www.youtube.com/@70-30App" target="_blank" rel="noopener" class="social-btn youtube">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.5 12 3.5 12 3.5s-7.54 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14C4.46 20.5 12 20.5 12 20.5s7.54 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
+        <span>YouTube</span>
+      </a>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="footer-logo">70<span>/</span>30 App</div>
-  <div style="display:flex;gap:24px;">
-    <a href="/privacidade.html" style="color:rgba(255,255,255,0.35);font-size:0.78rem;text-decoration:none;">Política de Privacidade</a>
-    <a href="/termos.html" style="color:rgba(255,255,255,0.35);font-size:0.78rem;text-decoration:none;">Termos de Uso</a>
+  <div class="footer-links">
+    <a href="/privacidade.html">Política de Privacidade</a>
+    <a href="/termos.html">Termos de Uso</a>
   </div>
   <div class="footer-note">© 2026 · Feito no Brasil 🇧🇷</div>
 </footer>
