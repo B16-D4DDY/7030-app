@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidade — 70/30 App</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0F1E3C; --blue: #1D4ED8; --bright: #3B82F6;
+    --gold: #F59E0B; --white: #FFFFFF; --gray: #94A3B8; --green: #10B981;
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
+
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 48px; position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    backdrop-filter: blur(20px); background: rgba(15,30,60,0.85);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; text-decoration: none; color: var(--white); }
+  .nav-logo span { color: var(--gold); }
+  .nav-back {
+    color: rgba(255,255,255,0.5); font-size: 0.875rem; text-decoration: none;
+    display: flex; align-items: center; gap: 6px; transition: color 0.2s;
+  }
+  .nav-back:hover { color: white; }
+
+  .container { max-width: 760px; margin: 0 auto; padding: 120px 48px 80px; }
+
+  .doc-header { margin-bottom: 56px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .doc-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.3);
+    color: var(--gold); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 20px;
+  }
+  .doc-title { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 16px; }
+  .doc-meta { color: rgba(255,255,255,0.4); font-size: 0.875rem; }
+
+  .doc-body { display: flex; flex-direction: column; gap: 40px; }
+
+  .doc-section { }
+  .section-num {
+    font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700;
+    margin-bottom: 14px; color: var(--white);
+  }
+  .section-body { color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.8; font-weight: 300; }
+  .section-body p { margin-bottom: 12px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-body ul { padding-left: 20px; margin: 12px 0; display: flex; flex-direction: column; gap: 8px; }
+  .section-body li { line-height: 1.7; }
+
+  .highlight-box {
+    background: rgba(16,185,129,0.06); border: 1px solid rgba(16,185,129,0.2);
+    border-radius: 14px; padding: 20px 24px; margin: 16px 0;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .highlight-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+  .highlight-text { color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.7; }
+
+  .contact-box {
+    background: rgba(245,158,11,0.06); border: 1px solid rgba(245,158,11,0.2);
+    border-radius: 16px; padding: 28px;
+  }
+  .contact-box .section-title { color: var(--gold); margin-bottom: 16px; }
+  .contact-item { display: flex; gap: 10px; align-items: center; color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 8px; }
+  .contact-item:last-child { margin-bottom: 0; }
+  .contact-label { color: rgba(255,255,255,0.35); font-size: 0.78rem; width: 80px; flex-shrink: 0; }
+  .contact-value a { color: var(--gold); text-decoration: none; }
+  .contact-value a:hover { text-decoration: underline; }
+
+  .divider { height: 1px; background: rgba(255,255,255,0.06); }
+
+  footer { border-top: 1px solid rgba(255,255,255,0.07); padding: 36px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; }
+  .footer-logo span { color: var(--gold); }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { color: rgba(255,255,255,0.35); font-size: 0.78rem; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: rgba(255,255,255,0.7); }
+  .footer-note { color: rgba(255,255,255,0.28); font-size: 0.78rem; }
+
+  @media (max-width: 768px) {
+    nav { padding: 18px 24px; }
+    .container { padding: 100px 24px 60px; }
+    footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px 24px; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">70<span>/</span>30</a>
+  <a href="/" class="nav-back">← Voltar ao site</a>
+</nav>
+
+<div class="container">
+  <div class="doc-header">
+    <div class="doc-badge">📄 Documento legal</div>
+    <h1 class="doc-title">Política de<br>Privacidade</h1>
+    <p class="doc-meta">Última atualização: maio de 2026 · Versão 1.0</p>
+  </div>
+
+  <div class="doc-body">
+
+    <div class="highlight-box">
+      <div class="highlight-icon">🔒</div>
+      <div class="highlight-text"><strong style="color:white">Resumo simples:</strong> O 70/30 App não coleta, não armazena e não compartilha nenhum dado pessoal. Seus dados ficam exclusivamente no seu dispositivo e, se habilitado, no seu próprio iCloud.</div>
+    </div>
+
+    <div class="doc-section">
+      <div class="section-num">01</div>
+      <div class="section-title">Sobre esta Política</div>
+      <div class="section-body">
+        <p>Esta Política de Privacidade descreve como o aplicativo 70/30 — Controle Financeiro ("App"), desenvolvido por Connect – Soluções em TI (CNPJ 20.770.172/0001-51), trata as informações dos seus usuários.</p>
+        <p>Ao utilizar o App, você concorda com os termos descritos neste documento.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="doc-section">
+      <div class="section-num">02</div>
+      <div class="section-title">Dados que NÃO coletamos</div>
+      <div class="section-body">
+        <p>O 70/30 App foi desenvolvido com privacidade como princípio central. Não coletamos:</p>
+        <ul>
+          <li>Nome, e-mail ou qualquer informação de identificação pessoal</li>
+          <li>Dados financeiros, bancários ou de cartão de crédito</li>
+          <li>Localização geográfica</li>
+          <li>Dados de uso, telemetria ou analytics</li>
+          <li>Informações do dispositivo</li>
+        </ul>
+        <p>O App não exige criação de conta ou cadastro de qualquer natureza.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="doc-section">
+      <div class="section-num">03</div>
+      <div class="section-title">Onde seus dados são armazenados</div>
+      <div class="section-body">
+        <p>Todos os dados que você insere no App (gastos, renda, cartões, recorrências) são armazenados <strong style="color:white">exclusivamente no seu dispositivo</strong>, utilizando o SwiftData com armazenamento local.</p>
+        <p>Se você estiver logado com uma conta Apple ID e tiver o iCloud habilitado, os dados podem ser sincronizados com o seu iCloud privado para backup e continuidade entre dispositivos. Nesse caso, os dados são gerenciados diretamente pela Apple, sob a Política de Privacidade da Apple, sem qualquer acesso por nossa parte.</p>
+        <p>Em nenhuma hipótese os dados são enviados para servidores próprios da Connect – Soluções em TI.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="doc-section">
+      <div class="section-num">04</div>
+      <div class="section-title">Compras dentro do App (In-App Purchases)</div>
+      <div class="section-body">
+        <p>O App oferece compras opcionais para desbloqueio de funcionalidades premium. Todas as transações são processadas exclusivamente pela Apple através da App Store.</p>
+        <p>Não temos acesso a dados de pagamento, número de cartão, ou qualquer informação financeira relacionada às compras. Para dúvidas sobre cobranças, consulte diretamente a Apple em <strong style="color:white">reportaproblem.apple.com</strong>.</p>
+        <p>A única informação que o App armazena localmente é o status de desbloqueio premium (se você comprou ou não), sem nenhum dado de transação.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="doc-section">
+      <div class="section-num">05</div>
+      <div class="section-title">Notificações</div>
+      <div class="section-body">
+        <p>O App pode solicitar permissão para enviar notificações locais (alertas de vencimento de contas e faturas). Essas notificações são geradas e entregues localmente, sem envolvimento de servidores externos.</p>
+        <p>Você pode desativar as notificações a qualquer momento nas configurações do iPhone em <strong style="color:white">Ajustes → 70/30 → Notificações</strong>.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="doc-section">
+      <div class="section-num">06</div>
+      <div class="section-title">Compartilhamento com terceiros</div>
+      <div class="section-body">
+        <p>Não compartilhamos, vendemos, alugamos ou transferimos quaisquer dados dos usuários para terceiros, pois simplesmente não coletamos esses dados.</p>
+        <p>O App não integra SDKs de publicidade, ferramentas de rastreamento, ou plataformas de analytics de terceiros.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="doc-section">
+      <div class="section-num">07</div>
+      <div class="section-title">Exclusão dos dados</div>
+      <div class="section-body">
+        <p>Como todos os dados ficam no seu dispositivo, você tem controle total sobre eles:</p>
+        <ul>
+          <li><strong style="color:white">Excluir dados do App:</strong> Desinstale o aplicativo do iPhone — todos os dados locais são removidos automaticamente pelo iOS.</li>
+          <li><strong style="color:white">Excluir backup do iCloud:</strong> Acesse Ajustes → [seu nome] → iCloud → Gerenciar Armazenamento → 70/30 → Excluir Dados.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="doc-section">
+      <div class="section-num">08</div>
+      <div class="section-title">Menores de idade</div>
+      <div class="section-body">
+        <p>O App é classificado como livre para todas as idades (4+) na App Store. Como não coletamos nenhum dado pessoal, não há tratamento de dados de menores de qualquer natureza.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="doc-section">
+      <div class="section-num">09</div>
+      <div class="section-title">Alterações nesta Política</div>
+      <div class="section-body">
+        <p>Podemos atualizar esta Política de Privacidade periodicamente. Quando houver alterações relevantes, atualizaremos a data de "última atualização" no topo do documento e, quando aplicável, notificaremos os usuários através do App.</p>
+        <p>O uso continuado do App após as alterações constitui aceitação da nova política.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="contact-box">
+      <div class="section-title">Fale conosco</div>
+      <div class="section-body" style="margin-bottom:20px;">
+        <p>Dúvidas sobre privacidade? Entre em contato:</p>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Empresa</div>
+        <div class="contact-value">Connect – Soluções em TI</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">CNPJ</div>
+        <div class="contact-value">20.770.172/0001-51</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">E-mail</div>
+        <div class="contact-value"><a href="mailto:contato@70-30app.com.br">contato@70-30app.com.br</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Site</div>
+        <div class="contact-value"><a href="http://70-30app.com.br">70-30app.com.br</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">70<span>/</span>30 App</div>
+  <div class="footer-links">
+    <a href="/privacidade.html">Privacidade</a>
+    <a href="/termos.html">Termos de Uso</a>
+  </div>
+  <div class="footer-note">© 2026 · Connect – Soluções em TI</div>
+</footer>
+
+</body>
+</html>
