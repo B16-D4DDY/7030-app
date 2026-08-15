@@ -189,6 +189,10 @@
   .feat-title { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
   .feat-desc { color: rgba(255,255,255,0.45); font-size: 0.85rem; line-height: 1.65; font-weight: 300; }
 
+  @media (min-width: 961px) {
+    .features-grid .feat-card:nth-child(10) { grid-column-start: 2; }
+  }
+
   /* CTA */
   .cta { padding: 120px 48px; text-align: center; max-width: 700px; margin: 0 auto; }
   .cta-pill {
@@ -390,8 +394,8 @@
     <div class="darkmode-text">
       <div class="section-label">Modo escuro</div>
       <h2>Bonito de dia.<br>Perfeito à noite.</h2>
-      <p>O app acompanha automaticamente o modo do seu iPhone — sem precisar configurar nada. Claro durante o dia, escuro à noite.</p>
-      <div class="dark-badge">🌙 Modo escuro automático</div>
+      <p>Por padrão o app acompanha o modo do seu iPhone. Prefere sempre claro ou sempre escuro? Escolha em Ajustes — independente do sistema.</p>
+      <div class="dark-badge">🌙 Claro, escuro ou automático</div>
     </div>
   </div>
 </section>
@@ -445,11 +449,15 @@
   </div>
   <div class="features-grid reveal">
     <div class="feat-card"><div class="feat-icon fi-blue">💳</div><div class="feat-title">Múltiplos cartões</div><div class="feat-desc">Gerencie todos os seus cartões, faturas organizadas com alerta de vencimento.</div></div>
+    <div class="feat-card"><div class="feat-icon fi-cyan">🧾</div><div class="feat-title">Compras parceladas</div><div class="feat-desc">Comprou em 10x? Lance uma vez e o app distribui cada parcela no mês certo — você vê o impacto nos próximos meses antes de confirmar.</div></div>
     <div class="feat-card"><div class="feat-icon fi-gold">🔁</div><div class="feat-title">Gastos recorrentes</div><div class="feat-desc">Netflix, aluguel, academia — cadastre uma vez e o app lança automaticamente todo mês.</div></div>
+    <div class="feat-card"><div class="feat-icon fi-orange">🔔</div><div class="feat-title">Alertas inteligentes</div><div class="feat-desc">Aviso antes do vencimento de contas e faturas — e um toque quando uma categoria chega a 80% do orçamento, antes de estourar.</div></div>
+    <div class="feat-card"><div class="feat-icon fi-green">🎯</div><div class="feat-title">Metas com prazo</div><div class="feat-desc">Defina o valor e o prazo. O app calcula o aporte mensal e lança sozinho até você chegar lá.</div></div>
+    <div class="feat-card"><div class="feat-icon fi-cyan">💰</div><div class="feat-title">Aportes dedicados</div><div class="feat-desc">Recebeu um bônus? Direcione para uma categoria específica sem inflar o orçamento base do mês.</div></div>
     <div class="feat-card"><div class="feat-icon fi-green">✅</div><div class="feat-title">Baixa de pagamento</div><div class="feat-desc">Marque gastos como pagos com um swipe. Pague a fatura inteira do cartão com um toque.</div></div>
-    <div class="feat-card"><div class="feat-icon fi-cyan">🎯</div><div class="feat-title">Aportes dedicados e Metas</div><div class="feat-desc">Recebeu um bônus? Direcione para uma categoria específica sem afetar o orçamento base. Crie metas</div></div>
-    <div class="feat-card"><div class="feat-icon fi-orange">🔔</div><div class="feat-title">Alertas inteligentes</div><div class="feat-desc">Notificações antes do vencimento de contas e faturas. Nunca mais pague multa por esquecer.</div></div>
-    <div class="feat-card"><div class="feat-icon fi-purple">🔒</div><div class="feat-title">100% privado</div><div class="feat-desc">Seus dados são seus. Nenhuma conta necessária, nenhum cadastro, privacidade total.</div></div>
+    <div class="feat-card"><div class="feat-icon fi-purple">📱</div><div class="feat-title">Widget na tela de início</div><div class="feat-desc">Resumo do orçamento direto na tela de início — em 3 tamanhos. Sem precisar abrir o app.</div></div>
+    <div class="feat-card"><div class="feat-icon fi-blue">📋</div><div class="feat-title">Organização de gastos</div><div class="feat-desc">Ordene por data, vencimento ou valor. Agrupe por categoria e veja etiquetas de urgência como "Vence hoje" e "Atrasada há 3 dias".</div></div>
+    <div class="feat-card"><div class="feat-icon fi-purple">🔒</div><div class="feat-title">100% privado</div><div class="feat-desc">Seus dados são seus. Nenhuma conta necessária, nenhum cadastro. Apague tudo dentro do próprio app, inclusive o backup no iCloud.</div></div>
   </div>
 </section>
 
