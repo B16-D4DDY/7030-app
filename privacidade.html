@@ -106,14 +106,14 @@
   <div class="doc-header">
     <div class="doc-badge">📄 Documento legal</div>
     <h1 class="doc-title">Política de<br>Privacidade</h1>
-    <p class="doc-meta">Última atualização: agosto de 2026 · Versão 1.1</p>
+    <p class="doc-meta">Última atualização: novembro de 2026 · Versão 1.2</p>
   </div>
 
   <div class="doc-body">
 
     <div class="highlight-box">
       <div class="highlight-icon">🔒</div>
-      <div class="highlight-text"><strong style="color:white">Resumo simples:</strong> O 70/30 App não coleta, não armazena e não compartilha nenhum dado pessoal. Seus dados ficam exclusivamente no seu dispositivo e, se habilitado, no seu próprio iCloud.</div>
+      <div class="highlight-text"><strong style="color:white">Resumo simples:</strong> O 70/30 App não coleta, não armazena e não compartilha nenhum dado pessoal. Seus dados ficam exclusivamente no seu dispositivo e, se habilitado, no seu próprio iCloud. Nenhum dado vai para servidores nossos.</div>
     </div>
 
     <div class="doc-section">
@@ -138,6 +138,7 @@
           <li>Localização geográfica</li>
           <li>Dados de uso, telemetria ou analytics</li>
           <li>Informações do dispositivo</li>
+          <li>Imagens da câmera ou fotos da sua galeria</li>
         </ul>
         <p>O App não exige criação de conta ou cadastro de qualquer natureza.</p>
         <p>O App armazena localmente algumas preferências de uso (aparência, feedback tátil, antecedência de avisos e histórico de notificações). Essas preferências são técnicas, não contêm dados pessoais e ficam apenas no seu dispositivo.</p>
@@ -152,6 +153,7 @@
       <div class="section-body">
         <p>Todos os dados que você insere no App (gastos, renda, cartões, recorrências) são armazenados <strong style="color:white">exclusivamente no seu dispositivo</strong>, utilizando o SwiftData com armazenamento local.</p>
         <p>Se você estiver logado com uma conta Apple ID e tiver o iCloud habilitado, os dados podem ser copiados automaticamente para o seu iCloud privado. Essa cópia funciona como backup e restauração — útil ao reinstalar o app ou trocar de iPhone. Não há sincronização contínua entre dois dispositivos em uso simultâneo. Os dados no iCloud são gerenciados diretamente pela Apple, sob a Política de Privacidade da Apple, sem qualquer acesso por nossa parte.</p>
+        <p>Quando você lança um gasto pela leitura da nota fiscal (seção 04), o App guarda junto com o gasto a chave de acesso da nota, para não deixar a mesma nota ser lançada duas vezes. Para cada loja, guarda também a descrição, a categoria e o tipo que você escolheu, para preencher a próxima nota da mesma loja. Essas informações ficam no seu dispositivo e entram no backup do iCloud, como os demais dados.</p>
         <p>Em nenhuma hipótese os dados são enviados para servidores próprios da Connect – Soluções em TI.</p>
       </div>
     </div>
@@ -160,6 +162,25 @@
 
     <div class="doc-section">
       <div class="section-num">04</div>
+      <div class="section-title">Leitura de nota fiscal</div>
+      <div class="section-body">
+        <p>O App pode ler o QR Code do cupom fiscal eletrônico (NFC-e ou CF-e) para preencher um gasto. Isso só acontece quando você toca em "Ler nota fiscal" e escolhe uma das opções:</p>
+        <ul>
+          <li><strong style="color:white">Câmera:</strong> o App pede permissão para usar a câmera. As imagens são analisadas no próprio aparelho apenas para encontrar o QR Code; nenhuma imagem é gravada ou enviada.</li>
+          <li><strong style="color:white">Foto da galeria:</strong> você escolhe uma foto pelo seletor do iOS. O App recebe só a foto escolhida, procura o QR Code nela e a descarta. O App não pede acesso à sua galeria.</li>
+          <li><strong style="color:white">Colar link:</strong> você cola o link do QR Code ou a chave de acesso impressa no cupom.</li>
+        </ul>
+        <p><strong style="color:white">Consulta à Sefaz:</strong> para obter o valor, a data e o nome da loja, o App pode abrir o link do próprio QR Code, que leva ao portal oficial da Secretaria da Fazenda (Sefaz) do estado onde a nota foi emitida. É a mesma consulta pública que qualquer pessoa faz ao apontar a câmera do celular para o cupom. O App só acessa endereços oficiais do governo (gov.br) e nenhum dado seu, como gastos ou renda, é enviado. Como em qualquer acesso a um site, o portal recebe o endereço de internet (IP) da sua conexão. Quando o próprio QR Code já traz as informações e a loja já é conhecida, a consulta nem acontece.</p>
+        <p>Se o portal exigir uma verificação (como um captcha), o App mostra a própria página da Sefaz para você resolver. Essa tela não guarda cookies, cache nem histórico. A página e as verificações exibidas nela pertencem ao portal do governo e seguem as regras dele.</p>
+        <p>O App não guarda a página do portal: aproveita só o valor, a data e o nome da loja, que vão para o formulário e só são gravados quando você toca em Salvar.</p>
+        <p>Você pode retirar a permissão da câmera a qualquer momento em <strong style="color:white">Ajustes → 70/30 App → Câmera</strong>.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="doc-section">
+      <div class="section-num">05</div>
       <div class="section-title">Compras dentro do App (In-App Purchases)</div>
       <div class="section-body">
         <p>O App oferece compras opcionais para desbloqueio de funcionalidades premium. Todas as transações são processadas exclusivamente pela Apple através da App Store.</p>
@@ -171,22 +192,11 @@
     <div class="divider"></div>
 
     <div class="doc-section">
-      <div class="section-num">05</div>
+      <div class="section-num">06</div>
       <div class="section-title">Notificações</div>
       <div class="section-body">
         <p>O App pode solicitar permissão para enviar notificações locais. São dois tipos de alerta: vencimento de contas e faturas, e aviso quando uma categoria atinge 80% do orçamento mensal — antes de você estourar o limite. Essas notificações são geradas e entregues localmente, sem envolvimento de servidores externos.</p>
-        <p>Você controla as notificações em dois lugares: dentro do próprio app (incluindo a antecedência do aviso de vencimento) e nas configurações do iPhone em <strong style="color:white">Ajustes → 70/30 → Notificações</strong>.</p>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="doc-section">
-      <div class="section-num">06</div>
-      <div class="section-title">Compartilhamento com terceiros</div>
-      <div class="section-body">
-        <p>Não compartilhamos, vendemos, alugamos ou transferimos quaisquer dados dos usuários para terceiros, pois simplesmente não coletamos esses dados.</p>
-        <p>O App não integra SDKs de publicidade, ferramentas de rastreamento, ou plataformas de analytics de terceiros.</p>
+        <p>Você controla as notificações em dois lugares: dentro do próprio app (incluindo a antecedência do aviso de vencimento) e nas configurações do iPhone em <strong style="color:white">Ajustes → 70/30 App → Notificações</strong>.</p>
       </div>
     </div>
 
@@ -194,11 +204,23 @@
 
     <div class="doc-section">
       <div class="section-num">07</div>
+      <div class="section-title">Compartilhamento com terceiros</div>
+      <div class="section-body">
+        <p>Não compartilhamos, vendemos, alugamos ou transferimos quaisquer dados dos usuários para terceiros, pois simplesmente não coletamos esses dados.</p>
+        <p>O App não integra SDKs de publicidade, ferramentas de rastreamento, ou plataformas de analytics de terceiros.</p>
+        <p>A consulta da nota fiscal (seção 04) não é um compartilhamento de dados: o App apenas abre, a seu pedido, o endereço público impresso no cupom.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="doc-section">
+      <div class="section-num">08</div>
       <div class="section-title">Exclusão dos dados</div>
       <div class="section-body">
         <p>Como todos os dados ficam no seu dispositivo, você tem controle total sobre eles:</p>
         <ul>
-          <li><strong style="color:white">Apagar tudo pelo app:</strong> Em Ajustes dentro do 70/30, use "Apagar todos os dados" — remove os dados locais e o backup no iCloud de uma vez.</li>
+          <li><strong style="color:white">Apagar tudo pelo app:</strong> Em Ajustes dentro do 70/30, use "Apagar todos os dados" — remove os dados locais (inclusive o que o App aprendeu sobre as lojas das notas fiscais) e o backup no iCloud de uma vez.</li>
           <li><strong style="color:white">Desinstalar o app:</strong> Todos os dados locais são removidos automaticamente pelo iOS.</li>
           <li><strong style="color:white">Excluir somente o backup no iCloud:</strong> Acesse Ajustes → [seu nome] → iCloud → Salvos no iCloud → Ver tudo → 70/30 App → Excluir.</li>
         </ul>
@@ -208,7 +230,7 @@
     <div class="divider"></div>
 
     <div class="doc-section">
-      <div class="section-num">08</div>
+      <div class="section-num">09</div>
       <div class="section-title">Menores de idade</div>
       <div class="section-body">
         <p>O App é classificado como livre para todas as idades (4+) na App Store. Como não coletamos nenhum dado pessoal, não há tratamento de dados de menores de qualquer natureza.</p>
@@ -218,7 +240,7 @@
     <div class="divider"></div>
 
     <div class="doc-section">
-      <div class="section-num">09</div>
+      <div class="section-num">10</div>
       <div class="section-title">Alterações nesta Política</div>
       <div class="section-body">
         <p>Podemos atualizar esta Política de Privacidade periodicamente. Quando houver alterações relevantes, atualizaremos a data de "última atualização" no topo do documento e, quando aplicável, notificaremos os usuários através do App.</p>
