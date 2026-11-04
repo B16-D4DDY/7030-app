@@ -189,9 +189,24 @@
   .feat-title { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
   .feat-desc { color: rgba(255,255,255,0.45); font-size: 0.85rem; line-height: 1.65; font-weight: 300; }
 
-  @media (min-width: 961px) {
-    .features-grid .feat-card:nth-child(10) { grid-column-start: 2; }
-  }
+  .feat-new { display: inline-block; margin-left: 8px; padding: 2px 8px; border-radius: 100px; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.35); color: var(--green); font-family: 'DM Sans', sans-serif; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; vertical-align: middle; }
+
+  /* PLANOS */
+  .plans { padding: 100px 48px; background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .plans-inner { max-width: 1000px; margin: 0 auto; }
+  .plans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 56px; }
+  .plan-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 32px; }
+  .plan-card.premium { border-color: rgba(245,158,11,0.35); background: rgba(245,158,11,0.05); }
+  .plan-name { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 800; margin-bottom: 6px; }
+  .plan-card.premium .plan-name { color: var(--gold); }
+  .plan-sub { color: rgba(255,255,255,0.45); font-size: 0.85rem; margin-bottom: 20px; }
+  .plan-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .plan-list li { color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.5; padding-left: 24px; position: relative; font-weight: 300; }
+  .plan-list li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+  .plan-card.premium .plan-list li::before { color: var(--gold); }
+  .plans-note { margin-top: 24px; text-align: center; color: rgba(255,255,255,0.35); font-size: 0.8rem; }
+  .plans-note a { color: var(--gold); text-decoration: none; }
+  .plans-note a:hover { text-decoration: underline; }
 
   /* CTA */
   .cta { padding: 120px 48px; text-align: center; max-width: 700px; margin: 0 auto; }
@@ -251,9 +266,18 @@
     .screens { padding: 60px 24px; }
     .screens-grid { grid-template-columns: repeat(2,1fr); }
     .darkmode-grid { grid-template-columns: 1fr; }
+    /* As três telas do modo escuro têm largura fixa no HTML e, juntas,
+       passavam da largura do celular: aqui elas dividem o espaço. */
+    .darkmode-phones { gap: 10px; }
+    .darkmode-phone-wrap { flex: 1 1 0; min-width: 0; }
+    .darkmode-phone-wrap.main { flex-grow: 1.25; }
+    .darkmode-phone-frame { padding: 6px; border-radius: 24px; }
+    .darkmode-phone-frame img { width: 100% !important; border-radius: 18px !important; }
     .cats { padding: 60px 24px; }
     .cats-grid { grid-template-columns: 1fr; }
     .features-grid { grid-template-columns: 1fr; }
+    .plans { padding: 60px 24px; }
+    .plans-grid { grid-template-columns: 1fr; }
     .cta { padding: 80px 24px; }
     .social-section { padding: 48px 24px 60px; }
     .social-links { gap: 12px; }
@@ -324,7 +348,7 @@
     <div class="how-card hc2">
       <div class="how-num">02</div>
       <div class="how-title">Lance seus gastos</div>
-      <div class="how-desc">Registre cada gasto na categoria certa. O app mostra em tempo real quanto ainda sobra em cada uma.</div>
+      <div class="how-desc">Registre cada gasto na categoria certa — ou leia o QR Code da nota fiscal e o app preenche para você. Em tempo real você vê quanto ainda sobra em cada uma.</div>
     </div>
     <div class="how-card hc3">
       <div class="how-num">03</div>
@@ -448,16 +472,60 @@
     <h2>Pensado para o dia a dia</h2>
   </div>
   <div class="features-grid reveal">
+    <div class="feat-card"><div class="feat-icon fi-green">🧾</div><div class="feat-title">Leitura de nota fiscal<span class="feat-new">Novo</span></div><div class="feat-desc">Aponte a câmera para o QR Code do cupom: valor, data e loja já preenchidos. O app aprende suas escolhas para cada loja e avisa se a nota já foi lançada.</div></div>
     <div class="feat-card"><div class="feat-icon fi-blue">💳</div><div class="feat-title">Múltiplos cartões</div><div class="feat-desc">Gerencie todos os seus cartões, faturas organizadas com alerta de vencimento.</div></div>
-    <div class="feat-card"><div class="feat-icon fi-cyan">🧾</div><div class="feat-title">Compras parceladas</div><div class="feat-desc">Comprou em 10x? Lance uma vez e o app distribui cada parcela no mês certo — você vê o impacto nos próximos meses antes de confirmar.</div></div>
+    <div class="feat-card"><div class="feat-icon fi-cyan">🗓️</div><div class="feat-title">Compras parceladas</div><div class="feat-desc">Comprou em 10x? Lance uma vez e o app distribui cada parcela no mês certo — você vê o impacto nos próximos meses antes de confirmar.</div></div>
     <div class="feat-card"><div class="feat-icon fi-gold">🔁</div><div class="feat-title">Gastos recorrentes</div><div class="feat-desc">Netflix, aluguel, academia — cadastre uma vez e o app lança automaticamente todo mês.</div></div>
     <div class="feat-card"><div class="feat-icon fi-orange">🔔</div><div class="feat-title">Alertas inteligentes</div><div class="feat-desc">Aviso antes do vencimento de contas e faturas — e um toque quando uma categoria chega a 80% do orçamento, antes de estourar.</div></div>
     <div class="feat-card"><div class="feat-icon fi-green">🎯</div><div class="feat-title">Metas com prazo</div><div class="feat-desc">Defina o valor e o prazo. O app calcula o aporte mensal e lança sozinho até você chegar lá.</div></div>
     <div class="feat-card"><div class="feat-icon fi-cyan">💰</div><div class="feat-title">Aportes dedicados</div><div class="feat-desc">Recebeu um bônus? Direcione para uma categoria específica sem inflar o orçamento base do mês.</div></div>
-    <div class="feat-card"><div class="feat-icon fi-green">✅</div><div class="feat-title">Baixa de pagamento</div><div class="feat-desc">Marque gastos como pagos com um swipe. Marque como pago a fatura inteira do cartão com um toque.</div></div>
+    <div class="feat-card"><div class="feat-icon fi-orange">🏷️</div><div class="feat-title">Tipos de gasto</div><div class="feat-desc">Mercado, transporte, restaurantes… Marque o tipo e descubra para onde vai o seu dinheiro. Ou crie os seus, com ícone e cor.</div></div>
+    <div class="feat-card"><div class="feat-icon fi-green">✅</div><div class="feat-title">Baixa de pagamento</div><div class="feat-desc">Marque gastos como pagos com um swipe e registre se foi no Pix, no débito ou em dinheiro. Pague a fatura inteira do cartão com um toque.</div></div>
     <div class="feat-card"><div class="feat-icon fi-purple">📱</div><div class="feat-title">Widget na tela de início</div><div class="feat-desc">Resumo do orçamento direto na tela de início — em 3 tamanhos. Sem precisar abrir o app.</div></div>
-    <div class="feat-card"><div class="feat-icon fi-blue">📋</div><div class="feat-title">Organização de gastos</div><div class="feat-desc">Ordene por data da compra, vencimento ou valor. Agrupe por cartão e veja etiquetas de urgência como "Vence hoje" e "Atrasada há 3 dias".</div></div>
-    <div class="feat-card"><div class="feat-icon fi-purple">🔒</div><div class="feat-title">100% privado</div><div class="feat-desc">Seus dados são seus. Nenhuma conta necessária, nenhum cadastro. Apague tudo dentro do próprio app, inclusive o backup no iCloud.</div></div>
+    <div class="feat-card"><div class="feat-icon fi-blue">📋</div><div class="feat-title">Organização de gastos</div><div class="feat-desc">Ordene por data da compra, vencimento ou valor. Agrupe por cartão e veja etiquetas como "Vence hoje" e "Atrasada há 3 dias". Errou algo? Toque no gasto e edite.</div></div>
+    <div class="feat-card"><div class="feat-icon fi-purple">🔒</div><div class="feat-title">100% privado</div><div class="feat-desc">Seus dados são seus. Nenhuma conta, nenhum cadastro, nenhum servidor nosso. Apague tudo dentro do próprio app, inclusive o backup no iCloud.</div></div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section class="plans">
+  <div class="plans-inner">
+    <div class="reveal">
+      <div class="section-label">Grátis e Premium</div>
+      <h2>Comece de graça.<br>Vá além com o Premium.</h2>
+      <p class="section-desc">O método completo funciona na versão grátis. O Premium automatiza o dia a dia e libera o histórico inteiro.</p>
+    </div>
+    <div class="plans-grid reveal">
+      <div class="plan-card">
+        <div class="plan-name">Grátis</div>
+        <div class="plan-sub">Para sempre, sem cadastro</div>
+        <ul class="plan-list">
+          <li>Gastos e renda nas 4 categorias do método</li>
+          <li>Resumo com barras de progresso</li>
+          <li>1 cartão de crédito, com compras parceladas</li>
+          <li>3 meses de histórico</li>
+          <li>Aviso quando uma categoria chega a 80%</li>
+          <li>Baixa de pagamento e widget</li>
+          <li>Backup no iCloud e modo escuro</li>
+        </ul>
+      </div>
+      <div class="plan-card premium">
+        <div class="plan-name">👑 Premium</div>
+        <div class="plan-sub">Tudo da versão grátis, mais:</div>
+        <ul class="plan-list">
+          <li>Leitura de nota fiscal pelo QR Code</li>
+          <li>Histórico completo, sem limite de meses</li>
+          <li>Para onde vão os gastos, por tipo</li>
+          <li>Tipos de gasto personalizados</li>
+          <li>Metas com prazo</li>
+          <li>Gastos recorrentes</li>
+          <li>Alerta de vencimento de contas</li>
+          <li>Cartões ilimitados</li>
+          <li>Aportes dedicados</li>
+        </ul>
+      </div>
+    </div>
+    <p class="plans-note">Premium por pagamento único (vitalício) ou assinatura mensal, pela App Store. Valores nos <a href="/termos.html">Termos de Uso</a>.</p>
   </div>
 </section>
 
