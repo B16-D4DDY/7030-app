@@ -141,7 +141,7 @@
           <li>Imagens da câmera ou fotos da sua galeria</li>
         </ul>
         <p>O App não exige criação de conta ou cadastro de qualquer natureza.</p>
-        <p>O App armazena localmente algumas preferências de uso (aparência, feedback tátil, antecedência de avisos e histórico de notificações). Essas preferências são técnicas, não contêm dados pessoais e ficam apenas no seu dispositivo.</p>
+        <p>O App armazena localmente algumas preferências de uso (aparência, feedback tátil, registro da forma de pagamento, antecedência de avisos e histórico de notificações). Essas preferências são técnicas e não contêm dados pessoais. Elas ficam no seu dispositivo; a antecedência dos avisos também é copiada para o seu iCloud, para acompanhar você ao trocar de iPhone.</p>
       </div>
     </div>
 
@@ -154,6 +154,7 @@
         <p>Todos os dados que você insere no App (gastos, renda, cartões, recorrências) são armazenados <strong style="color:white">exclusivamente no seu dispositivo</strong>, utilizando o SwiftData com armazenamento local.</p>
         <p>Se você estiver logado com uma conta Apple ID e tiver o iCloud habilitado, os dados podem ser copiados automaticamente para o seu iCloud privado. Essa cópia funciona como backup e restauração — útil ao reinstalar o app ou trocar de iPhone. Não há sincronização contínua entre dois dispositivos em uso simultâneo. Os dados no iCloud são gerenciados diretamente pela Apple, sob a Política de Privacidade da Apple, sem qualquer acesso por nossa parte.</p>
         <p>Quando você lança um gasto pela leitura da nota fiscal (seção 04), o App guarda junto com o gasto a chave de acesso da nota, para não deixar a mesma nota ser lançada duas vezes. Para cada loja, guarda também a descrição, a categoria e o tipo que você escolheu, para preencher a próxima nota da mesma loja. Essas informações ficam no seu dispositivo e entram no backup do iCloud, como os demais dados.</p>
+        <p>Para que dois aparelhos não sobrescrevam o backup um do outro, o backup registra um identificador aleatório, criado pelo próprio App, e o tipo do aparelho que o fez (iPhone, iPad ou Mac). Esse identificador não tem relação com o número de série do aparelho, com a sua conta Apple nem com qualquer dado pessoal: ele fica no seu dispositivo e no seu iCloud e nunca é enviado a nós.</p>
         <p>Em nenhuma hipótese os dados são enviados para servidores próprios da Connect – Soluções em TI.</p>
       </div>
     </div>
@@ -170,9 +171,9 @@
           <li><strong style="color:white">Foto da galeria:</strong> você escolhe uma foto pelo seletor do iOS. O App recebe só a foto escolhida, procura o QR Code nela e a descarta. O App não pede acesso à sua galeria.</li>
           <li><strong style="color:white">Colar link:</strong> você cola o link do QR Code ou a chave de acesso impressa no cupom.</li>
         </ul>
-        <p><strong style="color:white">Consulta à Sefaz:</strong> para obter o valor, a data e o nome da loja, o App pode abrir o link do próprio QR Code, que leva ao portal oficial da Secretaria da Fazenda (Sefaz) do estado onde a nota foi emitida. É a mesma consulta pública que qualquer pessoa faz ao apontar a câmera do celular para o cupom. O App só acessa endereços oficiais do governo (gov.br) e nenhum dado seu, como gastos ou renda, é enviado. Como em qualquer acesso a um site, o portal recebe o endereço de internet (IP) da sua conexão. Quando o próprio QR Code já traz as informações e a loja já é conhecida, a consulta nem acontece.</p>
+        <p><strong style="color:white">Consulta à Sefaz:</strong> para obter o valor, a data, o nome da loja e a forma de pagamento, o App abre o link do próprio QR Code, que leva ao portal oficial da Secretaria da Fazenda (Sefaz) do estado onde a nota foi emitida. É a mesma consulta pública que qualquer pessoa faz ao apontar a câmera do celular para o cupom. O App só acessa endereços oficiais do governo (gov.br) e nenhum dado seu, como gastos ou renda, é enviado. Como em qualquer acesso a um site, o portal recebe o endereço de internet (IP) da sua conexão. A consulta só acontece quando o QR Code traz o link do portal; no cupom CF-e, ou quando você cola só a chave de acesso, nada é consultado.</p>
         <p>Se o portal exigir uma verificação (como um captcha), o App mostra a própria página da Sefaz para você resolver. Essa tela não guarda cookies, cache nem histórico. A página e as verificações exibidas nela pertencem ao portal do governo e seguem as regras dele.</p>
-        <p>O App não guarda a página do portal: aproveita só o valor, a data e o nome da loja, que vão para o formulário e só são gravados quando você toca em Salvar.</p>
+        <p>O App não guarda a página do portal: aproveita só o valor, a data, o nome da loja e a forma de pagamento, que vão para o formulário e só são gravados quando você toca em Salvar.</p>
         <p>Você pode retirar a permissão da câmera a qualquer momento em <strong style="color:white">Ajustes → 70/30 App → Câmera</strong>.</p>
       </div>
     </div>
@@ -185,7 +186,7 @@
       <div class="section-body">
         <p>O App oferece compras opcionais para desbloqueio de funcionalidades premium. Todas as transações são processadas exclusivamente pela Apple através da App Store.</p>
         <p>Não temos acesso a dados de pagamento, número de cartão, ou qualquer informação financeira relacionada às compras. Para dúvidas sobre cobranças, consulte diretamente a Apple em <strong style="color:white">reportaproblem.apple.com</strong>.</p>
-        <p>A única informação que o App armazena localmente é o status de desbloqueio premium (se você comprou ou não), sem nenhum dado de transação.</p>
+        <p>O App armazena apenas o status de desbloqueio premium (se você comprou ou não), sem nenhum dado de transação, e a data em que termina a oferta de boas-vindas das primeiras 24 horas. Essa data também é guardada no seu iCloud, para que a oferta não recomece se o App for reinstalado.</p>
       </div>
     </div>
 
