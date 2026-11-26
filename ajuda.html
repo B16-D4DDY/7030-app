@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajuda — 70/30 App</title>
+<meta name="description" content="Como usar o 70/30 — Controle Financeiro: o método 70/30, lançar gastos, cartões, metas, widget, backup no iCloud e em arquivo, plano grátis e Premium. Perguntas frequentes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0F1E3C; --blue: #1D4ED8; --bright: #3B82F6;
+    --gold: #F59E0B; --white: #FFFFFF; --gray: #94A3B8; --green: #10B981;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 48px; position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    backdrop-filter: blur(20px); background: rgba(15,30,60,0.85);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; text-decoration: none; color: var(--white); }
+  .nav-logo span { color: var(--gold); }
+  .nav-back { color: rgba(255,255,255,0.5); font-size: 0.875rem; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+  .nav-back:hover { color: white; }
+  .container { max-width: 760px; margin: 0 auto; padding: 120px 48px 80px; }
+  /* Âncoras não ficam escondidas atrás da barra fixa */
+  [id] { scroll-margin-top: 96px; }
+  .doc-header { margin-bottom: 56px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .doc-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(59,130,246,0.12); border: 1px solid rgba(59,130,246,0.3); color: var(--bright); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 20px; }
+  .doc-title { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 16px; }
+  .doc-meta { color: rgba(255,255,255,0.4); font-size: 0.875rem; }
+  .doc-body { display: flex; flex-direction: column; gap: 40px; }
+  .section-num { font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bright); margin-bottom: 10px; }
+  .section-title { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 14px; color: var(--white); }
+  .section-body { color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.8; font-weight: 300; }
+  .section-body p { margin-bottom: 12px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-body ul, .section-body ol { padding-left: 20px; margin: 12px 0; display: flex; flex-direction: column; gap: 8px; }
+  .section-body li { line-height: 1.7; }
+  .section-body strong { color: var(--white); font-weight: 500; }
+  .section-body em { color: rgba(255,255,255,0.75); }
+  .section-body h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--white); margin: 28px 0 10px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .section-body > h3:first-child { margin-top: 4px; }
+  .section-body blockquote { background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.2); border-radius: 14px; padding: 16px 20px; margin: 16px 0; color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.7; }
+  .pill { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 0.66rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3); padding: 3px 9px; border-radius: 100px; vertical-align: middle; }
+  .highlight-box { background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.2); border-radius: 14px; padding: 20px 24px; display: flex; gap: 14px; align-items: flex-start; }
+  .highlight-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+  .highlight-text { color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.7; }
+  .highlight-text strong { color: var(--white); }
+
+  /* Perguntas rápidas */
+  .faq { display: flex; flex-direction: column; gap: 10px; }
+  details { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; transition: border-color 0.2s; }
+  details[open] { border-color: rgba(59,130,246,0.35); background: rgba(59,130,246,0.05); }
+  summary { cursor: pointer; list-style: none; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-weight: 500; font-size: 0.95rem; color: rgba(255,255,255,0.9); }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-family: 'Syne', sans-serif; font-size: 1.2rem; color: var(--bright); flex-shrink: 0; transition: transform 0.2s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  summary:focus-visible { outline: 2px solid var(--bright); outline-offset: 2px; border-radius: 14px; }
+  .answer { padding: 0 20px 18px; color: rgba(255,255,255,0.6); font-size: 0.92rem; line-height: 1.75; font-weight: 300; }
+  .answer strong { color: var(--white); font-weight: 500; }
+
+  /* Índice */
+  .toc { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .toc a { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; transition: border-color 0.2s, background 0.2s; }
+  .toc a:hover { border-color: rgba(59,130,246,0.4); background: rgba(59,130,246,0.06); }
+  .toc-num { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.72rem; color: var(--bright); width: 20px; flex-shrink: 0; }
+  .toc .pill { margin-left: auto; }
+  .to-top { display: inline-block; margin-top: 18px; color: rgba(255,255,255,0.35); font-size: 0.8rem; text-decoration: none; }
+  .to-top:hover { color: var(--bright); }
+
+  .contact-box { background: rgba(245,158,11,0.06); border: 1px solid rgba(245,158,11,0.2); border-radius: 16px; padding: 28px; }
+  .contact-box .section-title { color: var(--gold); margin-bottom: 12px; }
+  .contact-box p { color: rgba(255,255,255,0.6); font-size: 0.92rem; line-height: 1.7; }
+  .contact-box a { color: var(--gold); text-decoration: none; }
+  .contact-box a:hover { text-decoration: underline; }
+  .closing { text-align: center; color: rgba(255,255,255,0.45); font-size: 0.9rem; font-style: italic; }
+  .divider { height: 1px; background: rgba(255,255,255,0.06); }
+  footer { border-top: 1px solid rgba(255,255,255,0.07); padding: 36px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; }
+  .footer-logo span { color: var(--gold); }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { color: rgba(255,255,255,0.35); font-size: 0.78rem; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: rgba(255,255,255,0.7); }
+  .footer-note { color: rgba(255,255,255,0.28); font-size: 0.78rem; }
+  @media (max-width: 768px) {
+    nav { padding: 18px 24px; }
+    .container { padding: 100px 24px 60px; }
+    .toc { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px 24px; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">70<span>/</span>30</a>
+  <a href="/" class="nav-back">← Voltar ao site</a>
+</nav>
+
+<div class="container">
+  <div class="doc-header">
+    <div class="doc-badge">💬 Central de ajuda</div>
+    <h1 class="doc-title">Como usar<br>o 70/30</h1>
+    <p class="doc-meta">Referente à versão 1.5.1 do app</p>
+  </div>
+
+  <div class="doc-body">
+
+    <div class="highlight-box">
+      <div class="highlight-icon">🧭</div>
+      <div class="highlight-text"><strong>Organize seu dinheiro com uma regra simples: 70% para o presente, 30% para o futuro.</strong> Sem cadastro, sem complicação — seus dados ficam no seu iPhone. Comece pelas perguntas mais comuns ou vá direto ao assunto pelo índice.</div>
+    </div>
+
+    <section id="perguntas">
+      <div class="section-num">Perguntas rápidas</div>
+      <h2 class="section-title">As dúvidas mais comuns</h2>
+      <div class="faq">
+      <details>
+        <summary>Preciso criar uma conta?</summary>
+        <div class="answer"><p>Não. É só baixar e começar.</p></div>
+      </details>
+      <details>
+        <summary>Meus dados vão para a internet?</summary>
+        <div class="answer"><p>Só para o seu iCloud privado, como backup. Não há servidor nosso guardando suas informações. A leitura de nota consulta apenas o portal da Sefaz, e só quando você pede. Um backup em arquivo só sai do aparelho para onde você mesmo enviar.</p></div>
+      </details>
+      <details>
+        <summary>Posso ter uma cópia dos meus dados fora do iCloud?</summary>
+        <div class="answer"><p>Sim. Em <strong>Ajustes → Dados &amp; Backup → Exportar</strong>. Para trazer de volta, use <strong>Importar</strong> — lembrando que isso substitui os dados do aparelho.</p></div>
+      </details>
+      <details>
+        <summary>Posso usar sem cartão de crédito?</summary>
+        <div class="answer"><p>Sim. Cartões são opcionais — você pode registrar gastos avulsos normalmente.</p></div>
+      </details>
+      <details>
+        <summary>Recorrência e parcelamento juntos?</summary>
+        <div class="answer"><p>Não fazem sentido juntos: recorrência é sempre à vista. Se você ativar "recorrente", o parcelamento é desativado automaticamente.</p></div>
+      </details>
+      <details>
+        <summary>A leitura da nota não preencheu tudo. E agora?</summary>
+        <div class="answer"><p>Alguns portais da Sefaz demoram ou pedem verificação. O app avisa o que faltou; complete à mão e salve normalmente.</p></div>
+      </details>
+      <details>
+        <summary>Por que a mesma nota não pode ser lida duas vezes?</summary>
+        <div class="answer"><p>Para você não registrar a mesma compra em dobro. Se quiser lançar de novo, apague o gasto anterior — ou lance à mão.</p></div>
+      </details>
+      <details>
+        <summary>Desativar ou apagar um cartão?</summary>
+        <div class="answer"><p>Quase sempre, desativar. O cartão sai da escolha de cartão e todo o histórico fica. Apagar remove o cartão e todos os gastos dele, sem volta.</p></div>
+      </details>
+      <details>
+        <summary>Não consigo cadastrar um segundo cartão. Por quê?</summary>
+        <div class="answer"><p>No plano gratuito, um cartão fica em uso por vez. Desative o atual em <strong>Cartões → Meus Cartões</strong> ou assine o premium para usar vários.</p></div>
+      </details>
+      <details>
+        <summary>Onde crio uma meta?</summary>
+        <div class="answer"><p>Em <strong>Gastos → 🎯 Minhas Metas → "+"</strong>.</p></div>
+      </details>
+      <details>
+        <summary>Por que as barras do Resumo estão zeradas/estranhas?</summary>
+        <div class="answer"><p>Provavelmente falta registrar sua <strong>renda</strong> do mês na tela de Entradas — é dela que saem os orçamentos.</p></div>
+      </details>
+      <details>
+        <summary>Dá para usar no iPad ou no Mac?</summary>
+        <div class="answer"><p>Sim. O app está disponível para iPhone e iPad, e também roda em Macs com Apple Silicon. O backup é de um aparelho por vez (veja "O backup tem um dono"). No Mac, a leitura de nota funciona pela foto ou pelo link, já que não há a câmera do leitor.</p></div>
+      </details>
+      <details>
+        <summary>Posso deixar o app sempre no modo escuro?</summary>
+        <div class="answer"><p>Sim. Em Ajustes → Preferências → Aparência, escolha "Escuro".</p></div>
+      </details>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="indice">
+      <div class="section-num">Índice</div>
+      <h2 class="section-title">Guia completo</h2>
+      <div class="toc">
+        <a href="#metodo"><span class="toc-num">01</span>O que é o método 70/30</a>
+        <a href="#telas"><span class="toc-num">02</span>As quatro telas do app</a>
+        <a href="#primeiros-passos"><span class="toc-num">03</span>Primeiros passos</a>
+        <a href="#novo-gasto"><span class="toc-num">04</span>Registrando um gasto</a>
+        <a href="#editar-gasto"><span class="toc-num">05</span>Editando um gasto</a>
+        <a href="#resumo"><span class="toc-num">06</span>A tela Resumo</a>
+        <a href="#gastos"><span class="toc-num">07</span>A tela Gastos</a>
+        <a href="#metas"><span class="toc-num">08</span>Metas <span class="pill">Premium</span></a>
+        <a href="#cartoes"><span class="toc-num">09</span>A tela Cartões</a>
+        <a href="#entradas"><span class="toc-num">10</span>A tela Entradas</a>
+        <a href="#notificacoes"><span class="toc-num">11</span>Alertas e notificações</a>
+        <a href="#preferencias"><span class="toc-num">12</span>Preferências</a>
+        <a href="#widget"><span class="toc-num">13</span>Widget na tela de início</a>
+        <a href="#backup"><span class="toc-num">14</span>Backup e privacidade</a>
+        <a href="#premium"><span class="toc-num">15</span>Gratuito e Premium</a>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="doc-section" id="metodo">
+      <div class="section-num">01</div>
+      <h2 class="section-title">O que é o método 70/30</h2>
+      <div class="section-body">
+<p>A ideia é dividir tudo o que você ganha em quatro fatias, para que você gaste o presente com tranquilidade <strong>e</strong> construa o futuro ao mesmo tempo:</p>
+<ul>
+<li><strong>60% — Essenciais:</strong> moradia, alimentação, transporte e saúde.</li>
+<li><strong>10% — Livre:</strong> lazer, restaurantes e entretenimento. É para gastar <strong>sem culpa</strong>.</li>
+<li><strong>20% — Objetivos:</strong> a viagem dos sonhos, sua reserva de emergência, a entrada de um imóvel.</li>
+<li><strong>10% — Aposentadoria:</strong> investimentos de longo prazo.</li>
+</ul>
+<p>Somando: <strong>70% para hoje</strong> (Essenciais + Livre) e <strong>30% para amanhã</strong> (Objetivos + Aposentadoria). O app calcula essas fatias automaticamente a partir da sua renda e mostra, em barras, se você está dentro ou estourando cada uma.</p>
+      </div>
+      <a class="to-top" href="#indice">↑ Índice</a>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="doc-section" id="telas">
+      <div class="section-num">02</div>
+      <h2 class="section-title">As quatro telas do app</h2>
+      <div class="section-body">
+<p>O app foi feito para ser direto. Tudo acontece em quatro telas:</p>
+<ol>
+<li><strong>Resumo</strong> — seu painel do mês, com as barras de progresso de cada categoria.</li>
+<li><strong>Gastos</strong> — a lista de tudo que você gastou, com filtros e ordenações. É também por aqui que você chega às suas <strong>metas</strong>.</li>
+<li><strong>Cartões</strong> — as faturas de cada cartão, organizadas.</li>
+<li><strong>Entradas</strong> — onde você registra sua renda e aportes.</li>
+</ol>
+<p>Na primeira vez que abre o app, um tutorial curto apresenta o método e as telas. Dá para pular a qualquer momento (botão <strong>"Pular"</strong>, no topo) e revê-lo depois em <strong>Ajustes → Ver tutorial novamente</strong>.</p>
+      </div>
+      <a class="to-top" href="#indice">↑ Índice</a>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="doc-section" id="primeiros-passos">
+      <div class="section-num">03</div>
+      <h2 class="section-title">Primeiros passos</h2>
+      <div class="section-body">
+<h3 id="1-registre-sua-renda-comece-por-aqui">1. Registre sua renda (comece por aqui)</h3>
+<p>Vá em <strong>Entradas</strong> e adicione quanto você recebe no mês. É a partir desse valor que o app calcula as quatro fatias. Você pode:</p>
+<ul>
+<li>Lançar sua <strong>renda base</strong> (seu salário/ganho principal).</li>
+<li>Lançar a mesma entrada em <strong>vários meses de uma vez</strong> — prático para renda fixa.</li>
+<li>Registrar <strong>aportes dedicados</strong> a uma categoria específica (por exemplo, um dinheiro extra que vai direto para "Objetivos"). Ao ligar a opção, escolha a categoria tocando num dos quatro botões. <em>(Recurso premium.)</em></li>
+</ul>
+<p>Errou uma entrada? Toque nela para <strong>editar</strong>.</p>
+<blockquote>
+<p>Dica: se as barras do Resumo parecerem estranhas, confira primeiro se a renda do mês foi registrada aqui.</p>
+</blockquote>
+<h3 id="2-cadastre-seus-cartoes-opcional">2. Cadastre seus cartões (opcional)</h3>
+<p>Em <strong>Cartões</strong>, adicione seus cartões de crédito informando o <strong>dia de fechamento</strong> e o <strong>dia de vencimento</strong> da fatura. Isso permite que o app coloque cada compra na fatura certa automaticamente.</p>
+<blockquote>
+<p>No plano gratuito, <strong>um cartão fica em uso por vez</strong>. Para cadastrar outro, desative o atual (ele continua com todo o histórico — veja "Desativar e reativar um cartão"). Com o premium, você usa quantos cartões quiser.</p>
+</blockquote>
+<h3 id="3-comece-a-lancar-seus-gastos">3. Comece a lançar seus gastos</h3>
+<p>Toque no <strong>"+"</strong> para adicionar um gasto. Veja a seguir tudo o que dá para fazer.</p>
+      </div>
+      <a class="to-top" href="#indice">↑ Índice</a>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="doc-section" id="novo-gasto">
+      <div class="section-num">04</div>
+      <h2 class="section-title">Registrando um gasto</h2>
+      <div class="section-body">
+<p>O formulário <strong>Novo Gasto</strong> segue a ordem das decisões mais comuns:</p>
+<ol>
+<li><strong>Detalhes</strong> — descrição, valor e data da compra. Aqui também fica a opção de <strong>ler a nota fiscal</strong> (veja abaixo).</li>
+<li><strong>Categoria</strong> — quatro botões, um para cada fatia do método. Um toque escolhe.</li>
+<li><strong>Tipo</strong> <em>(opcional)</em> — uma subcategoria que ajuda a ver para onde o dinheiro está indo.</li>
+<li><strong>Cartão de crédito</strong> — escolha no menu, ou deixe "Nenhum". Só aparecem os cartões em uso.</li>
+<li><strong>Já está pago?</strong> — para gastos sem cartão.</li>
+<li><strong>Gasto recorrente</strong> e <strong>Alerta de vencimento</strong> — opções extras, no fim.</li>
+</ol>
+<h3 id="tipos-de-gasto">Tipos de gasto</h3>
+<p>Os tipos de fábrica são: Moradia, Mercado, Transporte, Saúde, Contas, Educação, Restaurantes, Pet, Lazer, Compras e Assinaturas. Eles aparecem apenas nas categorias <strong>Essenciais</strong> e <strong>Livre</strong> — em Objetivos e Aposentadoria não há tipos. Marcar o tipo é opcional: o app funciona normalmente sem isso.</p>
+<p>Você também pode <strong>criar seus próprios tipos</strong>, com nome, ícone e cor (até 30), em <strong>Ajustes → Preferências → Tipos de gasto</strong> ou pelo <strong>"+"</strong> na própria tela de escolha do tipo. Se apagar um tipo, os gastos que o usavam passam a aparecer como "Outros" — valores e categorias não mudam. <em>(Tipos personalizados são premium; os de fábrica são gratuitos.)</em></p>
+<h3 id="ler-a-nota-fiscal">Ler a nota fiscal <span class="pill">Premium</span></h3>
+<p>Na seção Detalhes, toque em <strong>"Ler QR code nota fiscal"</strong>. A câmera abre direto; aponte para o QR Code do cupom. Embaixo da câmera há duas outras opções:</p>
+<ul>
+<li><strong>Galeria</strong> — escolha uma foto do cupom.</li>
+<li><strong>Colar link</strong> — cole o link do QR Code ou a chave de 44 caracteres impressa no cupom.</li>
+</ul>
+<p>O app preenche <strong>valor</strong> (o "valor a pagar", já com descontos), <strong>data</strong> e <strong>loja</strong>, e mostra o aviso <em>"Preenchido pela nota fiscal. Confira antes de salvar."</em> Nada é salvo até você tocar em <strong>Salvar</strong>.</p>
+<ul>
+<li><strong>Aprende com você:</strong> a descrição, a categoria e o tipo que você deixar para uma loja passam a vir prontos na próxima nota dela. Na primeira nota de uma loja, o app pode sugerir um tipo pelo nome (mercado, farmácia, posto, restaurante, pet shop).</li>
+<li><strong>Forma de pagamento:</strong> se a nota foi paga em <strong>dinheiro, débito ou Pix</strong>, o gasto já vem marcado como pago. Se foi no <strong>crédito</strong> e você tem um só cartão em uso, ele já vem escolhido — confira; com mais de um, o app pede para você escolher.</li>
+<li><strong>Nota repetida:</strong> se a nota já foi lançada, o app avisa <em>"Essa nota já foi lançada em DD/MM"</em> e oferece <strong>Ver lançamento</strong>. Apagar o gasto libera a nota para ser lida de novo.</li>
+<li><strong>Funciona em todos os estados</strong>, com o cupom fiscal eletrônico (NFC-e) e também com o CF-e de SP e do Ceará. A NF-e em folha A4 ainda não é aceita.</li>
+<li><strong>Sem internet?</strong> O app aproveita o que o próprio QR Code traz e avisa se não conseguir consultar a nota. Você completa o resto à mão.</li>
+<li><strong>Privacidade:</strong> a leitura só consulta o portal oficial da Sefaz do estado da nota, e só quando você pede. Se o portal pedir uma verificação (captcha), o app mostra a página da Sefaz para você resolver.</li>
+</ul>
+<h3 id="gasto-a-vista">Gasto à vista</h3>
+<p>O básico. Informe e salve.</p>
+<h3 id="gasto-parcelado-no-cartao">Gasto parcelado (no cartão)</h3>
+<p>Escolha um <strong>cartão</strong> e o número de <strong>parcelas</strong>. Logo abaixo aparece a prévia de em qual fatura cada parcela vai cair, respeitando o fechamento do cartão. Se a compra caiu depois do fechamento, ela vai para a próxima fatura — e você pode forçar isso com <strong>"Jogar para próxima fatura"</strong> (útil quando o fechamento cai em feriado ou fim de semana).</p>
+<h3 id="ja-esta-pago">Já está pago?</h3>
+<p>Para gastos <strong>sem cartão</strong>, toque em <strong>Pago</strong>, <strong>Débito</strong>, <strong>Dinheiro</strong> ou <strong>Pix</strong> e o gasto já é salvo como pago. Tocar de novo desmarca. Sem nada marcado, o gasto fica em aberto.</p>
+<ul>
+<li>Com um cartão escolhido, essa opção some: quem paga é a fatura.</li>
+<li>Num gasto que não se repete, marcar como pago esconde o alerta de vencimento — não há mais o que avisar.</li>
+<li>Se o gasto for recorrente, só o primeiro mês sai pago; os próximos ficam em aberto.</li>
+</ul>
+<blockquote>
+<p>Com <strong>Ajustes → Preferências → Registrar forma de pagamento</strong> desligado, aparece só o botão <strong>Pago</strong>.</p>
+</blockquote>
+<h3 id="gasto-recorrente">Gasto recorrente <span class="pill">Premium</span></h3>
+<p>Para algo que se repete todo mês (assinaturas, aluguel, mensalidades). Ative <strong>"Gasto recorrente"</strong> e defina por <strong>quantos meses</strong> ele se repete. O app lança automaticamente nos próximos meses.</p>
+<blockquote>
+<p>Um gasto recorrente é sempre "à vista" — ele não é parcelado. Recorrência <strong>pode</strong> ser usada com cartão; nesse caso o alerta de vencimento individual não aparece, porque quem tem lembrete é a fatura do cartão.</p>
+</blockquote>
+<h3 id="alerta-de-vencimento">Alerta de vencimento <span class="pill">Premium</span></h3>
+<p>Para contas sem cartão: informe o dia do vencimento e com quantos dias de antecedência quer ser avisado. Se o dia já passou no mês da compra, o app sugere lançar a conta no orçamento do mês seguinte.</p>
+      </div>
+      <a class="to-top" href="#indice">↑ Índice</a>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="doc-section" id="editar-gasto">
+      <div class="section-num">05</div>
+      <h2 class="section-title">Editando um gasto</h2>
+      <div class="section-body">
+<p>Toque em qualquer gasto na lista para editá-lo.</p>
+<ul>
+<li><strong>Descrição, valor, categoria e tipo</strong> podem ser mudados em qualquer gasto. Em parcelados e recorrentes, o app pergunta o alcance: só este, este e os próximos, ou todos.</li>
+<li><strong>Data, cartão e alerta</strong> só podem ser mudados em gastos avulsos. Se a mudança levar o gasto para outro mês ou outra fatura, o app avisa antes de salvar.</li>
+<li><strong>Pagamento:</strong> marque, troque a forma ou desfaça, com os mesmos botões do Novo Gasto. Vale só para aquele mês.</li>
+<li><strong>Número de parcelas, recorrência e duração</strong> não se editam: apague e lance de novo.</li>
+</ul>
+<p>Se o gasto veio de uma nota fiscal, a correção vale também para as próximas notas da mesma loja.</p>
+      </div>
+      <a class="to-top" href="#indice">↑ Índice</a>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="doc-section" id="resumo">
+      <div class="section-num">06</div>
+      <h2 class="section-title">A tela Resumo</h2>
+      <div class="section-body">
+<p>É o seu painel. Mostra:</p>
+<ul>
+<li>No cartão azul do topo, a <strong>renda</strong> do mês, o <strong>restante</strong> e uma barra com quanto da renda já foi gasto.</li>
+<li>Um <strong>card por categoria</strong> com quanto ainda resta nela e uma barra comparando o que você já gastou com o orçamento daquela fatia. O restante aparece em verde; se a categoria estourar, o card fica com borda vermelha e o valor em vermelho.</li>
+</ul>
+<p>Use as <strong>setas</strong> ao lado do mês para andar mês a mês; tocar no título abre a escolha do ano ou a volta para o mês atual.</p>
+<p><strong>Toque em uma categoria</strong> para ir direto à lista de Gastos já filtrada por ela — ótimo para investigar "onde foi parar o dinheiro de Essenciais este mês?".</p>
+<h3 id="alerta-de-orcamento">Alerta de orçamento</h3>
+<p>Quando seus gastos em uma categoria passam de <strong>80%</strong> do orçamento, o app te avisa com uma notificação. É um empurrãozinho para você desacelerar antes de estourar a fatia. Disponível também no plano gratuito.</p>
+      </div>
+      <a class="to-top" href="#indice">↑ Índice</a>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="doc-section" id="gastos">
+      <div class="section-num">07</div>
+      <h2 class="section-title">A tela Gastos</h2>
+      <div class="section-body">
+<p>A lista de tudo do mês. Os valores em aberto aparecem na cor normal do texto, e os pagos em cinza, riscados; o vermelho fica só para contas atrasadas. Você pode:</p>
+<ul>
+<li><strong>Filtrar por categoria</strong> tocando nos chips no topo.</li>
+<li><strong>Filtrar por situação:</strong> ver só os <strong>pendentes</strong> ou só os <strong>pagos</strong>.</li>
+<li><strong>Marcar como pago:</strong> deslize o gasto para a direita. Sem cartão, aparecem os botões <strong>Pago, Débito, Dinheiro e Pix</strong>; deslizar até o fim marca como <strong>Pago</strong>. Também dá para usar o menu de toque longo.</li>
+<li><strong>Editar:</strong> toque no gasto.</li>
+<li><strong>Apagar:</strong> deslize para a esquerda. Em parcelados, você escolhe entre só esta parcela, esta e as próximas, ou todas; em recorrentes, só este mês ou este e os futuros. Num mês de meta ainda não pago, o app pergunta o que deseja fazer e oferece também <strong>Guardar outro valor</strong> (veja em Metas).</li>
+</ul>
+<h3 id="ordenar-e-ver-como-agenda">Ordenar e ver como agenda</h3>
+<p>O app já abre ordenado por <strong>vencimento</strong>, com o que vence antes no topo — a lista funciona como uma agenda do mês. No menu de ordenação (ícone no topo) você pode trocar para:</p>
+<ul>
+<li><strong>Data da compra</strong> — crescente ou decrescente.</li>
+<li><strong>Valor</strong> — do maior para o menor, ou o contrário.</li>
+<li><strong>Vencimento</strong> (padrão) — a lista vira uma <strong>agenda de vencimentos</strong>. Seus gastos se agrupam por fatura de cada cartão e por contas avulsas, na ordem em que vencem. Cada grupo pode ser recolhido ou expandido.</li>
+</ul>
+<p>Nos modos "Data da compra" e "Valor" aparece ainda o interruptor <strong>"Agrupar"</strong>, que separa a lista <strong>por cartão</strong> (mais um grupo para gastos sem cartão). No modo Vencimento o agrupamento já é automático.</p>
+<h3 id="insight-para-onde-esta-indo">Insight "Para onde está indo" <span class="pill">Premium</span></h3>
+<p>Ao filtrar uma categoria que tem tipos (Essenciais, Livre), aparece um gráfico mostrando como aquele gasto se divide entre os tipos.</p>
+      </div>
+      <a class="to-top" href="#indice">↑ Índice</a>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="doc-section" id="metas">
+      <div class="section-num">08</div>
+      <h2 class="section-title">Metas <span class="pill">Premium</span></h2>
+      <div class="section-body">
+<p>Na tela <strong>Gastos</strong>, toque no ícone <strong>🎯 Minhas Metas</strong> (no topo, à esquerda).</p>
+<h3 id="criando-uma-meta">Criando uma meta</h3>
+<p>Toque no <strong>"+"</strong> (ou em <strong>Criar meta</strong>, se ainda não houver nenhuma). Informe o nome, o valor da meta e o início, e escolha:</p>
+<ul>
+<li><strong>Por prazo:</strong> em quantos meses quer atingir — o app calcula quanto guardar por mês.</li>
+<li><strong>Por valor mensal:</strong> quanto consegue guardar — o app calcula em quantos meses você chega lá.</li>
+</ul>
+<p>Se quiser, ligue o <strong>alerta de vencimento</strong> para ser lembrado de guardar o valor todo mês. O app lança o aporte de cada mês na categoria Objetivos.</p>
+<h3 id="acompanhando">Acompanhando</h3>
+<p>Cada meta mostra quanto você já guardou, quanto falta e quanto tempo resta. O valor "guardado" considera os aportes que você <strong>marcou como pagos</strong>. Quando você atinge o objetivo, o app comemora com você. 🎉</p>
+<h3 id="guardando-um-valor-diferente-no-mes">Guardando um valor diferente no mês</h3>
+<p>Nem todo mês dá para guardar exatamente o planejado — e às vezes sobra mais. Na tela <strong>Gastos</strong>, num mês da meta ainda não pago, mantenha o dedo pressionado e toque em <strong>Guardar outro valor</strong> (ou deslize para a direita e toque em <strong>Outro valor</strong>). Digite quanto guardou: o mês fica pago com esse valor e a diferença é dividida entre os próximos meses da meta. Antes de confirmar, o app mostra como eles ficam, por exemplo: <em>"Os próximos 5 meses passam de R$150,00 para R$154,00."</em></p>
+<ul>
+<li><strong>Guardou a mais?</strong> Os próximos meses diminuem. Se guardar tudo o que falta, a meta fica completa.</li>
+<li><strong>É o último mês e guardou menos?</strong> O app pergunta se você quer <strong>adicionar mais 1 mês</strong> com o que faltou ou <strong>encerrar a meta</strong> com o que já guardou.</li>
+<li>Meses que já passaram sem pagamento não entram nessa conta: para eles, use <strong>Reorganizar</strong>.</li>
+</ul>
+<h3 id="ajustando">Ajustando</h3>
+<p>Toque na meta para mudar o <strong>nome</strong>, o <strong>valor</strong> ou o <strong>prazo</strong> (o valor nunca pode ficar abaixo do que já foi guardado). Também dá para:</p>
+<ul>
+<li><strong>Encerrar</strong> a meta com o valor já guardado (deslize para a esquerda) — os meses não pagos são removidos e a meta fica concluída.</li>
+<li><strong>Reorganizar</strong>, quando ficaram meses passados sem pagamento: o app tira esses meses e divide o valor deles entre os meses que faltam.</li>
+<li><strong>Arquivar</strong> (deslize para a direita), para tirar a meta da lista principal. As arquivadas ficam numa seção própria e podem voltar.</li>
+</ul>
+<p>Uma meta que já tem dinheiro guardado é <strong>encerrada</strong>, nunca apagada — inclusive ao apagar um mês dela pela tela de Gastos.</p>
+      </div>
+      <a class="to-top" href="#indice">↑ Índice</a>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="doc-section" id="cartoes">
+      <div class="section-num">09</div>
+      <h2 class="section-title">A tela Cartões</h2>
+      <div class="section-body">
+<p>Aqui você vê a <strong>fatura de cada cartão</strong> no mês selecionado. Cada cartão mostra o total da fatura e, ao expandir, as compras que a compõem. Toque numa compra para editá-la.</p>
+<p>Quando pagar a fatura, toque em <strong>"Marcar fatura como paga"</strong> — o app marca todas as compras daquela fatura como pagas de uma vez.</p>
+<h3 id="desativar-e-reativar-um-cartao">Desativar e reativar um cartão</h3>
+<p>Trocou de cartão ou parou de usar um? Em vez de apagar, <strong>desative</strong>. Em <strong>Cartões</strong>, toque no ícone de ajustes (no topo, à esquerda) para abrir <strong>Meus Cartões</strong> e deslize o cartão para a esquerda:</p>
+<ul>
+<li><strong>Desativar</strong> — o cartão sai da escolha de cartão no Novo Gasto, mas <strong>nada se perde</strong>: faturas, parcelas que ainda vão cair, gastos recorrentes e lembretes continuam. Nos meses em que ele ainda tem fatura, aparece na tela Cartões com o selo <strong>"Desativado"</strong>. Se houver gastos recorrentes nele, o app avisa para você editá-los caso tenham mudado de cartão.</li>
+<li><strong>Reativar</strong> — os cartões desativados ficam na seção <strong>"Cartões desativados"</strong>; deslize e toque em Reativar.</li>
+</ul>
+<blockquote>
+<p><strong>Apagar é diferente:</strong> apagar um cartão apaga também <strong>todos os gastos dele</strong>, de forma permanente. Por isso, ao tentar apagar um cartão que tem gastos, o app oferece <strong>Desativar</strong> no próprio aviso.</p>
+<p>Por que fechamento e vencimento são dias diferentes? O <strong>fechamento</strong> é quando a fatura "fecha" — compras depois disso vão para o próximo mês. O <strong>vencimento</strong> é quando você paga. O app usa os dois para organizar suas faturas como elas realmente funcionam.</p>
+</blockquote>
+      </div>
+      <a class="to-top" href="#indice">↑ Índice</a>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="doc-section" id="entradas">
+      <div class="section-num">10</div>
+      <h2 class="section-title">A tela Entradas</h2>
+      <div class="section-body">
+<p>Além de registrar a renda (como visto nos primeiros passos), aqui você acompanha suas entradas <strong>organizadas por mês</strong>. Toque em um mês para ver o detalhe; toque numa entrada para editar ou apagar. Os aportes dedicados aparecem com um carimbo na cor da categoria a que se destinam.</p>
+      </div>
+      <a class="to-top" href="#indice">↑ Índice</a>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="doc-section" id="notificacoes">
+      <div class="section-num">11</div>
+      <h2 class="section-title">Alertas e notificações</h2>
+      <div class="section-body">
+<p>O app pode te lembrar de coisas importantes (tudo opcional e configurável em <strong>Ajustes → Notificações</strong>):</p>
+<ul>
+<li><strong>Vencimento de contas</strong> — avisa antes de uma conta vencer. <em>(Recurso premium.)</em></li>
+<li><strong>Fatura do cartão</strong> — lembrete do vencimento de cada fatura que tem lançamentos.</li>
+<li><strong>Orçamento</strong> — quando uma categoria passa de 80%.</li>
+</ul>
+<p>Você define com quantos dias de antecedência quer ser avisado. Essa preferência acompanha você ao trocar de iPhone. Marcar uma conta como paga cancela o aviso dela; desfazer o pagamento reagenda.</p>
+<p>Em <strong>Ajustes → Notificações</strong> há ainda <strong>"Últimas notificações"</strong>, o histórico dos avisos dos últimos 10 dias.</p>
+      </div>
+      <a class="to-top" href="#indice">↑ Índice</a>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="doc-section" id="preferencias">
+      <div class="section-num">12</div>
+      <h2 class="section-title">Preferências</h2>
+      <div class="section-body">
+<p>Em <strong>Ajustes → Preferências</strong>:</p>
+<ul>
+<li><strong>Aparência</strong> — Automático (segue o iPhone), Claro ou Escuro.</li>
+<li><strong>Feedback tátil</strong> — vibrações sutis ao salvar, excluir e interagir.</li>
+<li><strong>Registrar forma de pagamento</strong> — mostra Débito, Dinheiro e Pix ao marcar como pago. Desligado, aparece só "Pago".</li>
+<li><strong>Tipos de gasto</strong> — crie, edite e apague seus tipos personalizados.</li>
+</ul>
+      </div>
+      <a class="to-top" href="#indice">↑ Índice</a>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="doc-section" id="widget">
+      <div class="section-num">13</div>
+      <h2 class="section-title">Widget na tela de início</h2>
+      <div class="section-body">
+<p>O 70/30 traz um widget para a tela de início do iPhone, com o mesmo visual do app — o cartão azul do Resumo e os ícones das categorias —, mostrando o mês corrente sem precisar abrir o app:</p>
+<ul>
+<li><strong>Médio</strong> — renda restante, quanto da renda já foi gasto e o restante de cada categoria.</li>
+<li><strong>Grande</strong> — renda, restante e total gasto, e cada categoria com quanto foi gasto e o orçamento.</li>
+<li><strong>Extra Grande</strong> <em>(iOS 27 ou mais novo)</em> — tudo do Grande e os <strong>próximos vencimentos</strong> (faturas e contas a pagar).</li>
+</ul>
+<p>Toque no <strong>olho</strong> dentro do widget para <strong>ocultar os valores</strong> ("R$ ••••") — útil quando alguém está olhando sua tela. Toque de novo para mostrar.</p>
+<p>Para adicionar: mantenha o dedo pressionado na tela de início, toque em <strong>"+"</strong> no canto, procure por <strong>70/30</strong> e escolha o tamanho.</p>
+<blockquote>
+<p>O widget mostra sempre o <strong>mês atual</strong>, mesmo que dentro do app você esteja navegando por outro mês. Ele também funciona com a tela de início nos modos colorido e transparente do iPhone.</p>
+</blockquote>
+      </div>
+      <a class="to-top" href="#indice">↑ Índice</a>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="doc-section" id="backup">
+      <div class="section-num">14</div>
+      <h2 class="section-title">Backup e privacidade</h2>
+      <div class="section-body">
+<p>O 70/30 foi feito com privacidade total:</p>
+<ul>
+<li><strong>Nenhum cadastro, nenhuma conta, nenhum login.</strong></li>
+<li>Seus dados ficam <strong>no seu próprio aparelho</strong>.</li>
+<li>O <strong>backup é feito no seu iCloud privado</strong> — só você tem acesso. Se reinstalar o app ou trocar de iPhone, seus dados podem ser restaurados.</li>
+<li>A <strong>câmera</strong> só é usada para ler o QR Code da nota, e nenhuma imagem é guardada. A leitura da nota consulta apenas o portal oficial da Sefaz.</li>
+</ul>
+<h3 id="o-backup-tem-um-dono">O backup tem um dono</h3>
+<p>O backup guarda os dados de <strong>um aparelho por vez</strong> — ele não sincroniza dois aparelhos ao mesmo tempo. Se você usar o app no iPhone e depois instalar no iPad (ou no Mac), o app avisa que o backup pertence ao outro aparelho e pergunta o que fazer:</p>
+<ul>
+<li><strong>Transferir para este aparelho</strong> — traz os dados para cá, e daí em diante o backup passa a ser feito por aqui.</li>
+<li><strong>Começar do zero</strong> — usa o app vazio neste aparelho, sem mexer no backup do outro.</li>
+</ul>
+<h3 id="a-tela-dados-backup">A tela Dados &amp; Backup</h3>
+<p>Em <strong>Ajustes</strong>, a linha <strong>Dados &amp; Backup</strong> já mostra se o iCloud está ativo e quando foi a última cópia. Tocando nela, você encontra:</p>
+<ul>
+<li><strong>iCloud</strong> — qual aparelho faz o backup, e os botões para trazer os dados para cá ou assumir o backup a qualquer momento.</li>
+<li><strong>Backup em arquivo</strong> — veja abaixo.</li>
+<li><strong>Apagar todos os dados</strong> — uma ação protegida, que exige segurar o botão por 5 segundos e confirmar.</li>
+</ul>
+<h3 id="backup-em-arquivo">Backup em arquivo</h3>
+<p>Além do iCloud, você pode guardar <strong>uma cópia dos seus dados num arquivo</strong> — gratuito, inclusive no plano grátis:</p>
+<ul>
+<li><strong>Exportar</strong> — cria o arquivo e abre o compartilhamento do iPhone: salve em <strong>Arquivos</strong>, mande por <strong>AirDrop</strong> ou <strong>e-mail</strong>. O arquivo traz todos os seus dados: gastos, renda, cartões, metas, recorrências e tipos de gasto.</li>
+<li><strong>Importar</strong> — escolha um arquivo exportado pelo 70/30. O app mostra o que tem nele (data e quantidade de lançamentos, cartões, entradas e metas) e pede confirmação.</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>O arquivo não tem senha.</strong> Quem tiver acesso a ele consegue ver seus dados financeiros. Guarde num lugar seguro e envie só para você mesmo.</p>
+<p>⚠️ <strong>Importar substitui todos os dados do aparelho</strong> pelos do arquivo — não junta os dois.</p>
+</blockquote>
+<p>Útil para ter uma cópia fora do iCloud, guardar o mês fechado ou levar os dados para outro aparelho sem depender do iCloud.</p>
+<p>Ao <strong>apagar todos os dados</strong>, o aviso oferece <strong>"Exportar backup antes"</strong>: sem um backup em arquivo, não há como recuperar o que foi apagado (a não ser que o backup do iCloud seja de outro aparelho seu).</p>
+      </div>
+      <a class="to-top" href="#indice">↑ Índice</a>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="doc-section" id="premium">
+      <div class="section-num">15</div>
+      <h2 class="section-title">Gratuito e Premium</h2>
+      <div class="section-body">
+<p>O app é <strong>gratuito</strong> para baixar e usar nas funções principais. O <strong>premium</strong> (compra única vitalícia ou assinatura mensal) desbloqueia:</p>
+<ul>
+<li><strong>Leitura de nota fiscal</strong> pelo QR Code.</li>
+<li>O <strong>histórico completo</strong> (no gratuito, ficam visíveis os últimos 3 meses).</li>
+<li>O insight <strong>"Para onde está indo"</strong> (quebra por tipo).</li>
+<li><strong>Tipos de gasto personalizados</strong>.</li>
+<li><strong>Metas</strong>.</li>
+<li><strong>Gastos recorrentes</strong>.</li>
+<li><strong>Alerta de vencimento</strong> de contas.</li>
+<li><strong>Vários cartões em uso</strong> (no gratuito, um por vez — desative um para cadastrar outro).</li>
+<li><strong>Aportes dedicados</strong> a uma categoria.</li>
+</ul>
+<p>Continuam gratuitos, entre outros: as quatro telas, o cálculo 70/30, lançamentos à vista e parcelados, marcar como pago (com a forma de pagamento), editar gastos, faturas de cartão, os tipos de fábrica, o alerta de orçamento em 80%, o widget, o backup no iCloud, o backup em arquivo e a escolha de aparência.</p>
+<blockquote>
+<p><strong>Se o premium terminar:</strong> gastos recorrentes, metas e alertas criados durante o premium continuam funcionando. Se você tiver mais de um cartão em uso, o app pergunta qual quer manter; os outros são desativados, com todo o histórico. A pergunta volta até você escolher o cartão ou assinar.</p>
+<p><strong>Oferta de boas-vindas:</strong> nas primeiras 24 horas depois da primeira abertura do app, o acesso vitalício sai com desconto. A oferta aparece no fim do tutorial e numa faixa no Resumo (que pode ser fechada no "×"). Ela vale uma vez por Apple ID — reinstalar o app não reinicia o prazo.</p>
+</blockquote>
+      </div>
+      <a class="to-top" href="#indice">↑ Índice</a>
+    </section>
+
+    <div class="divider"></div>
+
+    <div class="contact-box">
+      <h2 class="section-title">Ainda com dúvida?</h2>
+      <p>Escreva para <a href="mailto:contato@70-30app.com.br">contato@70-30app.com.br</a> contando o que aconteceu e qual versão do app você usa. Respondemos o mais rápido possível.</p>
+    </div>
+
+    <p class="closing">Bom controle! Lembre-se: 70% para viver hoje, 30% para construir o amanhã.</p>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">70<span>/</span>30 App</div>
+  <div class="footer-links">
+    <a href="/privacidade.html">Privacidade</a>
+    <a href="/termos.html">Termos de Uso</a>
+  </div>
+  <div class="footer-note">© 2026 · Connect – Soluções em TI</div>
+</footer>
+
+</body>
+</html>
