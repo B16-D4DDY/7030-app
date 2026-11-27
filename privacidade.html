@@ -3,7 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Termos de Uso — 70/30 App</title>
+<meta name="description" content="O 70/30 não coleta dados pessoais: tudo fica no seu iPhone e no seu iCloud privado, sem cadastro e sem servidor próprio.">
+<link rel="canonical" href="https://70-30app.com.br/privacidade">
+<meta name="theme-color" content="#0F1E3C">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="70/30 App">
+<meta property="og:title" content="Política de Privacidade — 70/30 App">
+<meta property="og:description" content="O 70/30 não coleta dados pessoais: tudo fica no seu iPhone e no seu iCloud privado, sem cadastro e sem servidor próprio.">
+<meta property="og:url" content="https://70-30app.com.br/privacidade">
+<meta property="og:image" content="https://70-30app.com.br/imagens/og-7030.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="70% para hoje, 30% para o futuro — o app 70/30 aberto na tela Resumo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Política de Privacidade — 70/30 App">
+<meta name="twitter:description" content="O 70/30 não coleta dados pessoais: tudo fica no seu iPhone e no seu iCloud privado, sem cadastro e sem servidor próprio.">
+<meta name="twitter:image" content="https://70-30app.com.br/imagens/og-7030.jpg">
+<title>Política de Privacidade — 70/30 App</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -13,6 +30,7 @@
     --gold: #F59E0B; --white: #FFFFFF; --gray: #94A3B8; --green: #10B981;
   }
   body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
+
   nav {
     display: flex; align-items: center; justify-content: space-between;
     padding: 20px 48px; position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -21,39 +39,63 @@
   }
   .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; text-decoration: none; color: var(--white); }
   .nav-logo span { color: var(--gold); }
-  .nav-back { color: rgba(255,255,255,0.5); font-size: 0.875rem; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+  .nav-back {
+    color: rgba(255,255,255,0.5); font-size: 0.875rem; text-decoration: none;
+    display: flex; align-items: center; gap: 6px; transition: color 0.2s;
+  }
   .nav-back:hover { color: white; }
+
   .container { max-width: 760px; margin: 0 auto; padding: 120px 48px 80px; }
+
   .doc-header { margin-bottom: 56px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-  .doc-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(59,130,246,0.12); border: 1px solid rgba(59,130,246,0.3); color: var(--bright); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 20px; }
+  .doc-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.3);
+    color: var(--gold); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 20px;
+  }
   .doc-title { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 16px; }
   .doc-meta { color: rgba(255,255,255,0.4); font-size: 0.875rem; }
+
   .doc-body { display: flex; flex-direction: column; gap: 40px; }
+
   .doc-section { }
-  .section-num { font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bright); margin-bottom: 10px; }
-  .section-title { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 14px; color: var(--white); }
+  .section-num {
+    font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700;
+    margin-bottom: 14px; color: var(--white);
+  }
   .section-body { color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.8; font-weight: 300; }
   .section-body p { margin-bottom: 12px; }
   .section-body p:last-child { margin-bottom: 0; }
   .section-body ul { padding-left: 20px; margin: 12px 0; display: flex; flex-direction: column; gap: 8px; }
   .section-body li { line-height: 1.7; }
-  .highlight-box { background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.2); border-radius: 14px; padding: 20px 24px; margin: 16px 0; display: flex; gap: 14px; align-items: flex-start; }
+
+  .highlight-box {
+    background: rgba(16,185,129,0.06); border: 1px solid rgba(16,185,129,0.2);
+    border-radius: 14px; padding: 20px 24px; margin: 16px 0;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
   .highlight-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
   .highlight-text { color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.7; }
-  .pricing-table { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; overflow: hidden; margin: 16px 0; }
-  .pricing-row { display: flex; align-items: center; padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.06); gap: 16px; }
-  .pricing-row:last-child { border-bottom: none; }
-  .pricing-name { flex: 1; font-size: 0.9rem; color: rgba(255,255,255,0.8); }
-  .pricing-price { font-family: 'Syne', sans-serif; font-weight: 700; color: var(--gold); font-size: 0.95rem; }
-  .pricing-type { font-size: 0.78rem; color: rgba(255,255,255,0.35); width: 110px; text-align: right; }
-  .contact-box { background: rgba(245,158,11,0.06); border: 1px solid rgba(245,158,11,0.2); border-radius: 16px; padding: 28px; }
+
+  .contact-box {
+    background: rgba(245,158,11,0.06); border: 1px solid rgba(245,158,11,0.2);
+    border-radius: 16px; padding: 28px;
+  }
   .contact-box .section-title { color: var(--gold); margin-bottom: 16px; }
   .contact-item { display: flex; gap: 10px; align-items: center; color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 8px; }
   .contact-item:last-child { margin-bottom: 0; }
   .contact-label { color: rgba(255,255,255,0.35); font-size: 0.78rem; width: 80px; flex-shrink: 0; }
   .contact-value a { color: var(--gold); text-decoration: none; }
   .contact-value a:hover { text-decoration: underline; }
+
   .divider { height: 1px; background: rgba(255,255,255,0.06); }
+
   footer { border-top: 1px solid rgba(255,255,255,0.07); padding: 36px 48px; display: flex; justify-content: space-between; align-items: center; }
   .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; }
   .footer-logo span { color: var(--gold); }
@@ -61,11 +103,10 @@
   .footer-links a { color: rgba(255,255,255,0.35); font-size: 0.78rem; text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: rgba(255,255,255,0.7); }
   .footer-note { color: rgba(255,255,255,0.28); font-size: 0.78rem; }
+
   @media (max-width: 768px) {
     nav { padding: 18px 24px; }
     .container { padding: 100px 24px 60px; }
-    .pricing-row { flex-wrap: wrap; }
-    .pricing-type { width: auto; text-align: left; }
     footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px 24px; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
   }
@@ -80,24 +121,24 @@
 
 <div class="container">
   <div class="doc-header">
-    <div class="doc-badge">📋 Documento legal</div>
-    <h1 class="doc-title">Termos<br>de Uso</h1>
+    <div class="doc-badge">📄 Documento legal</div>
+    <h1 class="doc-title">Política de<br>Privacidade</h1>
     <p class="doc-meta">Última atualização: novembro de 2026 · Versão 1.4</p>
   </div>
 
   <div class="doc-body">
 
     <div class="highlight-box">
-      <div class="highlight-icon">📱</div>
-      <div class="highlight-text"><strong style="color:white">Ao baixar ou usar o 70/30 App, você concorda com estes Termos de Uso.</strong> Leia com atenção. Se não concordar, não utilize o aplicativo.</div>
+      <div class="highlight-icon">🔒</div>
+      <div class="highlight-text"><strong style="color:white">Resumo simples:</strong> O 70/30 App não coleta, não armazena e não compartilha nenhum dado pessoal. Seus dados ficam exclusivamente no seu dispositivo e, se habilitado, no seu próprio iCloud. Se você exportar um backup em arquivo, ele vai só para onde você escolher. Nenhum dado vai para servidores nossos.</div>
     </div>
 
     <div class="doc-section">
       <div class="section-num">01</div>
-      <div class="section-title">Aceitação dos Termos</div>
+      <div class="section-title">Sobre esta Política</div>
       <div class="section-body">
-        <p>Estes Termos de Uso regulam o relacionamento entre você ("Usuário") e a Connect – Soluções em TI (CNPJ 20.770.172/0001-51, "Desenvolvedora") em relação ao uso do aplicativo 70/30 — Controle Financeiro ("App").</p>
-        <p>O uso do App implica na aceitação integral destes Termos. A Desenvolvedora reserva o direito de atualizá-los a qualquer momento, sendo sua responsabilidade verificar periodicamente eventuais alterações.</p>
+        <p>Esta Política de Privacidade descreve como o aplicativo 70/30 — Controle Financeiro ("App"), desenvolvido por Connect – Soluções em TI (CNPJ 20.770.172/0001-51), trata as informações dos seus usuários.</p>
+        <p>Ao utilizar o App, você concorda com os termos descritos neste documento.</p>
       </div>
     </div>
 
@@ -105,14 +146,19 @@
 
     <div class="doc-section">
       <div class="section-num">02</div>
-      <div class="section-title">Descrição do App</div>
+      <div class="section-title">Dados que NÃO coletamos</div>
       <div class="section-body">
-        <p>O 70/30 é um aplicativo de controle financeiro pessoal para iPhone que aplica o método de divisão de renda 70/30, distribuindo o orçamento em quatro categorias: Essenciais (60%), Livre (10%), Objetivos (20%) e Aposentadoria (10%).</p>
-        <p>O App é oferecido em dois modelos:</p>
+        <p>O 70/30 App foi desenvolvido com privacidade como princípio central. Não coletamos:</p>
         <ul>
-          <li><strong style="color:white">Gratuito:</strong> 1 cartão de crédito em uso por vez, 3 meses de histórico e recursos essenciais de controle — sem custo</li>
-          <li><strong style="color:white">Premium:</strong> acesso completo — incluindo histórico sem limite, cartões ilimitados, metas, gastos recorrentes, alertas de vencimento, tipos de gasto personalizados e leitura de nota fiscal — mediante pagamento único ou assinatura mensal</li>
+          <li>Nome, e-mail ou qualquer informação de identificação pessoal</li>
+          <li>Dados financeiros, bancários ou de cartão de crédito</li>
+          <li>Localização geográfica</li>
+          <li>Dados de uso, telemetria ou analytics</li>
+          <li>Informações do dispositivo</li>
+          <li>Imagens da câmera ou fotos da sua galeria</li>
         </ul>
+        <p>O App não exige criação de conta ou cadastro de qualquer natureza.</p>
+        <p>O App armazena localmente algumas preferências de uso (aparência, feedback tátil, registro da forma de pagamento, antecedência de avisos e histórico de notificações). Essas preferências são técnicas e não contêm dados pessoais. Elas ficam no seu dispositivo; a antecedência dos avisos também é copiada para o seu iCloud, para acompanhar você ao trocar de iPhone.</p>
       </div>
     </div>
 
@@ -120,27 +166,16 @@
 
     <div class="doc-section">
       <div class="section-num">03</div>
-      <div class="section-title">Planos e Preços</div>
+      <div class="section-title">Onde seus dados são armazenados</div>
       <div class="section-body">
-        <p>O desbloqueio premium está disponível nas seguintes modalidades:</p>
-        <div class="pricing-table">
-          <div class="pricing-row">
-            <div class="pricing-name">🔥 Acesso Vitalício — Oferta de Boas-vindas</div>
-            <div class="pricing-price">R$ 19,90</div>
-            <div class="pricing-type">Pagamento único</div>
-          </div>
-          <div class="pricing-row">
-            <div class="pricing-name">✨ Acesso Vitalício</div>
-            <div class="pricing-price">R$ 39,90</div>
-            <div class="pricing-type">Pagamento único</div>
-          </div>
-          <div class="pricing-row">
-            <div class="pricing-name">Mensal Premium</div>
-            <div class="pricing-price">R$ 9,90/mês</div>
-            <div class="pricing-type">Renovação mensal</div>
-          </div>
-        </div>
-        <p>A oferta de boas-vindas de R$ 19,90 é válida nas primeiras 24 horas após a primeira abertura do app, individual por usuário. Todos os pagamentos são processados pela Apple através da App Store. Os preços podem ser alterados mediante aviso prévio.</p>
+        <p>Todos os dados que você insere no App (gastos, renda, cartões, recorrências) são armazenados <strong style="color:white">exclusivamente no seu dispositivo</strong>, utilizando o SwiftData com armazenamento local.</p>
+        <p>Se você estiver logado com uma conta Apple ID e tiver o iCloud habilitado, os dados podem ser copiados automaticamente para o seu iCloud privado. Essa cópia funciona como backup e restauração — útil ao reinstalar o app ou trocar de iPhone. Não há sincronização contínua entre dois dispositivos em uso simultâneo. Os dados no iCloud são gerenciados diretamente pela Apple, sob a Política de Privacidade da Apple, sem qualquer acesso por nossa parte.</p>
+        <p>Quando você lança um gasto pela leitura da nota fiscal (seção 04), o App guarda junto com o gasto a chave de acesso da nota, para não deixar a mesma nota ser lançada duas vezes. Para cada loja, guarda também a descrição, a categoria e o tipo que você escolheu, para preencher a próxima nota da mesma loja. Essas informações ficam no seu dispositivo e entram no backup do iCloud, como os demais dados.</p>
+        <p>Para que dois aparelhos não sobrescrevam o backup um do outro, o backup registra um identificador aleatório, criado pelo próprio App, e o tipo do aparelho que o fez (iPhone, iPad ou Mac). Esse identificador não tem relação com o número de série do aparelho, com a sua conta Apple nem com qualquer dado pessoal: ele fica no seu dispositivo e no seu iCloud e nunca é enviado a nós.</p>
+        <p><strong style="color:white">Backup em arquivo:</strong> em Ajustes → Dados &amp; Backup, você pode exportar uma cópia dos seus dados (gastos, renda, cartões, metas, recorrências, tipos de gasto e o que o App aprendeu sobre as lojas das notas fiscais) num arquivo. O arquivo só é criado quando você toca em "Exportar", e o App abre a folha de compartilhar do iOS para você escolher o destino: Arquivos, AirDrop, e-mail ou outro app. A cópia temporária usada para isso é apagada do aparelho assim que a folha fecha.</p>
+        <p>O arquivo <strong style="color:white">não tem senha nem criptografia</strong>: quem tiver acesso a ele consegue ler os seus dados. Guarde-o num lugar seguro e envie só para você mesmo. Depois de sair do App, o arquivo segue as regras do lugar ou serviço que você escolheu.</p>
+        <p>Para importar, você escolhe o arquivo pelo seletor do iOS. O App lê apenas o arquivo escolhido e, depois da sua confirmação, substitui os dados do aparelho pelos do arquivo.</p>
+        <p>Em nenhuma hipótese os dados são enviados para servidores próprios da Connect – Soluções em TI.</p>
       </div>
     </div>
 
@@ -148,17 +183,18 @@
 
     <div class="doc-section">
       <div class="section-num">04</div>
-      <div class="section-title">Assinatura e Cancelamento</div>
+      <div class="section-title">Leitura de nota fiscal</div>
       <div class="section-body">
-        <p>A assinatura mensal é renovada automaticamente mensalmente, a menos que seja cancelada pelo menos 24 horas antes do término do período vigente.</p>
-        <p>Para cancelar a assinatura:</p>
+        <p>O App pode ler o QR Code do cupom fiscal eletrônico (NFC-e ou CF-e) para preencher um gasto. Isso só acontece quando você toca em "Ler QR code nota fiscal" e escolhe uma das opções:</p>
         <ul>
-          <li>Acesse <strong style="color:white">Ajustes → [seu nome] → Assinaturas</strong> no iPhone</li>
-          <li>Selecione <strong style="color:white">70/30 App → Cancelar Assinatura</strong></li>
+          <li><strong style="color:white">Câmera:</strong> o App pede permissão para usar a câmera. As imagens são analisadas no próprio aparelho apenas para encontrar o QR Code; nenhuma imagem é gravada ou enviada.</li>
+          <li><strong style="color:white">Foto da galeria:</strong> você escolhe uma foto pelo seletor do iOS. O App recebe só a foto escolhida, procura o QR Code nela e a descarta. O App não pede acesso à sua galeria.</li>
+          <li><strong style="color:white">Colar link:</strong> você cola o link do QR Code ou a chave de acesso impressa no cupom.</li>
         </ul>
-        <p>O cancelamento não gera reembolso pelo período já pago. O acesso premium permanece ativo até o fim do período vigente.</p>
-        <p>Quando o acesso premium termina, nada é apagado: gastos recorrentes, metas e alertas já criados continuam funcionando. Se houver mais de um cartão em uso, o App pede que você escolha qual manter; os demais são desativados, com todo o histórico preservado, e podem ser reativados depois.</p>
-        <p>Para solicitações de reembolso, acesse <strong style="color:white">reportaproblem.apple.com</strong>.</p>
+        <p><strong style="color:white">Consulta à Sefaz:</strong> para obter o valor, a data, o nome da loja e a forma de pagamento, o App abre o link do próprio QR Code, que leva ao portal oficial da Secretaria da Fazenda (Sefaz) do estado onde a nota foi emitida. É a mesma consulta pública que qualquer pessoa faz ao apontar a câmera do celular para o cupom. O App só acessa endereços oficiais do governo (gov.br) e nenhum dado seu, como gastos ou renda, é enviado. Como em qualquer acesso a um site, o portal recebe o endereço de internet (IP) da sua conexão. A consulta só acontece quando o QR Code traz o link do portal; no cupom CF-e, ou quando você cola só a chave de acesso, nada é consultado.</p>
+        <p>Se o portal exigir uma verificação (como um captcha), o App mostra a própria página da Sefaz para você resolver. Essa tela não guarda cookies, cache nem histórico. A página e as verificações exibidas nela pertencem ao portal do governo e seguem as regras dele.</p>
+        <p>O App não guarda a página do portal: aproveita só o valor, a data, o nome da loja e a forma de pagamento, que vão para o formulário e só são gravados quando você toca em Salvar.</p>
+        <p>Você pode retirar a permissão da câmera a qualquer momento em <strong style="color:white">Ajustes → 70/30 App → Câmera</strong>.</p>
       </div>
     </div>
 
@@ -166,9 +202,11 @@
 
     <div class="doc-section">
       <div class="section-num">05</div>
-      <div class="section-title">Restauração de Compras</div>
+      <div class="section-title">Compras dentro do App (In-App Purchases)</div>
       <div class="section-body">
-        <p>Se você reinstalar o App ou trocar de iPhone, poderá restaurar suas compras anteriores gratuitamente através do botão <strong style="color:white">"Restaurar compra anterior"</strong> disponível na tela de planos do App, utilizando o mesmo Apple ID da compra original.</p>
+        <p>O App oferece compras opcionais para desbloqueio de funcionalidades premium. Todas as transações são processadas exclusivamente pela Apple através da App Store.</p>
+        <p>Não temos acesso a dados de pagamento, número de cartão, ou qualquer informação financeira relacionada às compras. Para dúvidas sobre cobranças, consulte diretamente a Apple em <strong style="color:white">reportaproblem.apple.com</strong>.</p>
+        <p>O App armazena apenas o status de desbloqueio premium (se você comprou ou não), sem nenhum dado de transação, e a data em que termina a oferta de boas-vindas das primeiras 24 horas. Essa data também é guardada no seu iCloud, para que a oferta não recomece se o App for reinstalado.</p>
       </div>
     </div>
 
@@ -176,17 +214,10 @@
 
     <div class="doc-section">
       <div class="section-num">06</div>
-      <div class="section-title">Limitações do App</div>
+      <div class="section-title">Notificações</div>
       <div class="section-body">
-        <p>O App é uma ferramenta de organização financeira pessoal. É importante entender suas limitações:</p>
-        <ul>
-          <li>O App <strong style="color:white">não é</strong> um serviço de consultoria financeira ou de investimentos</li>
-          <li>O App <strong style="color:white">não se conecta</strong> a bancos, corretoras ou instituições financeiras</li>
-          <li>As informações exibidas dependem exclusivamente dos dados inseridos ou confirmados pelo Usuário</li>
-          <li>A <strong style="color:white">leitura de nota fiscal</strong> consulta o portal público da Sefaz do estado emissor da nota. A Desenvolvedora não controla esse portal e não garante que ele esteja disponível nem que toda nota possa ser lida. Os dados preenchidos a partir da nota devem ser conferidos pelo Usuário antes de salvar</li>
-          <li>O <strong style="color:white">backup em arquivo</strong> não tem senha. Guardar o arquivo e decidir com quem compartilhá-lo é responsabilidade do Usuário. Importar um backup substitui todos os dados do aparelho pelos do arquivo</li>
-          <li>A Desenvolvedora não se responsabiliza por decisões financeiras tomadas com base no App</li>
-        </ul>
+        <p>O App pode solicitar permissão para enviar notificações locais. São dois tipos de alerta: vencimento de contas e faturas, e aviso quando uma categoria atinge 80% do orçamento mensal — antes de você estourar o limite. Essas notificações são geradas e entregues localmente, sem envolvimento de servidores externos.</p>
+        <p>Você controla as notificações em dois lugares: dentro do próprio app (incluindo a antecedência do aviso de vencimento) e nas configurações do iPhone em <strong style="color:white">Ajustes → 70/30 App → Notificações</strong>.</p>
       </div>
     </div>
 
@@ -194,16 +225,12 @@
 
     <div class="doc-section">
       <div class="section-num">07</div>
-      <div class="section-title">Licença de Uso</div>
+      <div class="section-title">Compartilhamento com terceiros</div>
       <div class="section-body">
-        <p>A Desenvolvedora concede ao Usuário uma licença pessoal, intransferível, não exclusiva e revogável para uso do App em dispositivos Apple de sua propriedade, conforme permitido pelos Termos de Serviço da App Store.</p>
-        <p>É vedado ao Usuário:</p>
-        <ul>
-          <li>Copiar, modificar, distribuir ou criar obras derivadas do App</li>
-          <li>Realizar engenharia reversa ou tentar extrair o código-fonte</li>
-          <li>Usar o App para fins comerciais sem autorização expressa</li>
-          <li>Tentar contornar mecanismos de licenciamento ou pagamento</li>
-        </ul>
+        <p>Não compartilhamos, vendemos, alugamos ou transferimos quaisquer dados dos usuários para terceiros, pois simplesmente não coletamos esses dados.</p>
+        <p>O App não integra SDKs de publicidade, ferramentas de rastreamento, ou plataformas de analytics de terceiros.</p>
+        <p>A consulta da nota fiscal (seção 04) não é um compartilhamento de dados: o App apenas abre, a seu pedido, o endereço público impresso no cupom.</p>
+        <p>Exportar um backup em arquivo (seção 03) também não é um compartilhamento com terceiros: o arquivo vai apenas para o destino que você escolher, e nada é enviado à Connect – Soluções em TI.</p>
       </div>
     </div>
 
@@ -211,10 +238,15 @@
 
     <div class="doc-section">
       <div class="section-num">08</div>
-      <div class="section-title">Disponibilidade e Atualizações</div>
+      <div class="section-title">Exclusão dos dados</div>
       <div class="section-body">
-        <p>A Desenvolvedora se reserva o direito de modificar, suspender ou encerrar o App a qualquer momento, sem obrigação de aviso prévio, especialmente para manutenção, segurança ou atualizações.</p>
-        <p>Atualizações do App podem ser disponibilizadas periodicamente e podem alterar ou remover funcionalidades. O uso continuado após uma atualização implica aceitação das mudanças.</p>
+        <p>Como todos os dados ficam no seu dispositivo, você tem controle total sobre eles:</p>
+        <ul>
+          <li><strong style="color:white">Apagar tudo pelo app:</strong> Em Ajustes → Dados &amp; Backup dentro do 70/30, use "Apagar todos os dados" — remove os dados locais (inclusive o que o App aprendeu sobre as lojas das notas fiscais) e o backup no iCloud de uma vez. Se o backup do iCloud tiver sido feito por outro aparelho seu, ele é mantido.</li>
+          <li><strong style="color:white">Arquivos de backup exportados:</strong> ficam onde você os salvou ou enviou e não são apagados pelo App. Para excluí-los, apague-os nesses lugares.</li>
+          <li><strong style="color:white">Desinstalar o app:</strong> Todos os dados locais são removidos automaticamente pelo iOS.</li>
+          <li><strong style="color:white">Excluir somente o backup no iCloud:</strong> Acesse Ajustes → [seu nome] → iCloud → Salvos no iCloud → Ver tudo → 70/30 App → Excluir.</li>
+        </ul>
       </div>
     </div>
 
@@ -222,10 +254,9 @@
 
     <div class="doc-section">
       <div class="section-num">09</div>
-      <div class="section-title">Isenção de Garantias</div>
+      <div class="section-title">Menores de idade</div>
       <div class="section-body">
-        <p>O App é fornecido "no estado em que se encontra", sem garantias expressas ou implícitas de qualquer tipo, incluindo adequação para uma finalidade específica ou ausência de erros.</p>
-        <p>A Desenvolvedora não garante que o App funcionará de forma ininterrupta ou sem falhas, embora se comprometa a manter a qualidade e corrigir problemas identificados.</p>
+        <p>O App é classificado como livre para todas as idades (4+) na App Store. Como não coletamos nenhum dado pessoal, não há tratamento de dados de menores de qualquer natureza.</p>
       </div>
     </div>
 
@@ -233,9 +264,10 @@
 
     <div class="doc-section">
       <div class="section-num">10</div>
-      <div class="section-title">Lei Aplicável e Foro</div>
+      <div class="section-title">Alterações nesta Política</div>
       <div class="section-body">
-        <p>Estes Termos são regidos pelas leis da República Federativa do Brasil. Fica eleito o foro da Comarca de São Paulo/SP para dirimir eventuais conflitos decorrentes deste instrumento, com renúncia a qualquer outro, por mais privilegiado que seja.</p>
+        <p>Podemos atualizar esta Política de Privacidade periodicamente. Quando houver alterações relevantes, atualizaremos a data de "última atualização" no topo do documento e, quando aplicável, notificaremos os usuários através do App.</p>
+        <p>O uso continuado do App após as alterações constitui aceitação da nova política.</p>
       </div>
     </div>
 
@@ -244,7 +276,7 @@
     <div class="contact-box">
       <div class="section-title">Fale conosco</div>
       <div class="section-body" style="margin-bottom:20px;">
-        <p>Dúvidas sobre estes Termos? Entre em contato:</p>
+        <p>Dúvidas sobre privacidade? Entre em contato:</p>
       </div>
       <div class="contact-item">
         <div class="contact-label">Empresa</div>
@@ -260,7 +292,7 @@
       </div>
       <div class="contact-item">
         <div class="contact-label">Site</div>
-        <div class="contact-value"><a href="http://70-30app.com.br">70-30app.com.br</a></div>
+        <div class="contact-value"><a href="https://70-30app.com.br">70-30app.com.br</a></div>
       </div>
     </div>
 
@@ -270,8 +302,9 @@
 <footer>
   <div class="footer-logo">70<span>/</span>30 App</div>
   <div class="footer-links">
-    <a href="/privacidade.html">Privacidade</a>
-    <a href="/ajuda.html">Ajuda</a>
+    <a href="/privacidade">Privacidade</a>
+    <a href="/termos">Termos de Uso</a>
+    <a href="/ajuda">Ajuda</a>
   </div>
   <div class="footer-note">© 2026 · Connect – Soluções em TI</div>
 </footer>
